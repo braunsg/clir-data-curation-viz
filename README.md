@@ -6,16 +6,16 @@ This repository provides the code for the CLIR data curation fellows visualizati
 ABOUT THE FILES
 
 This package contains several directories, described in brief below:
-	interface/
+	interface
 		A directory holding all files related to the visualization web interface
 		
-	scripts/
+	scripts
 		A directory of all scripts used for data analyses related to this project
 		
-	table-definitions/
+	table-definitions
 		A directory of MySQL table definitions (queries) to set up the table structure necessary for the visualization interface architecture, including tables WITH sample (dummy) data and WITHOUT sample data
 		
-	sample-data/
+	sample-data
 		A directory of sample text files used in analyses related to this project in plain text format
 		
 USING THE FILES
@@ -25,6 +25,12 @@ The code for this project in its entirety, including all files in this repositor
 FULL DOCUMENTATION
 
 Full documentation for Manifold is provided in the file CLIR_VISUALIZATION_FRAMEWORK_DOCUMENTATION (PDF). This includes a more detailed description of its system structure as well as screenshots of its functionality.
+
+INTERFACE
+
+The full visualization interface for this project is currently located at:
+
+http://www.stevengbraun.com/dev/clir/index.php
 
 CONTACT
 
