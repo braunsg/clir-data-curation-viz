@@ -1,0 +1,83 @@
+/*////////////////////////////////////////////////////////////////////////////////////////
+
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2015 at 03:53 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `institution_data`
+--
+
+CREATE TABLE `institution_data` (
+  `i_row_index` int(11) NOT NULL COMMENT 'Row counter for institution',
+  `i_id` varchar(15) DEFAULT NULL COMMENT 'Institution ID unique',
+  `i_name` varchar(500) NOT NULL COMMENT 'Institution name',
+  `i_dc_host_status` varchar(1) DEFAULT NULL COMMENT 'Data curation track host institution status',
+  `i_lat` varchar(150) NOT NULL COMMENT 'Institution latitude',
+  `i_lon` varchar(150) NOT NULL COMMENT 'Institution longitude'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds institution latitude and longitude data';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `institution_data`
+--
+ALTER TABLE `institution_data`
+  ADD PRIMARY KEY (`i_row_index`),
+  ADD UNIQUE KEY `i_name` (`i_name`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `institution_data`
+--
+ALTER TABLE `institution_data`
+  MODIFY `i_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for institution';
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

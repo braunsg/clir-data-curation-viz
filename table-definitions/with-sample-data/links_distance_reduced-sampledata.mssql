@@ -1,0 +1,70 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:07 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir_sample_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance_reduced`
+--
+
+CREATE TABLE `links_distance_reduced` (
+  `token_link_rd_row_index` int(11) NOT NULL COMMENT 'Row counter for token link (reduced)',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance_threshold` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+--
+-- Dumping data for table `links_distance_reduced`
+--
+
+INSERT INTO `links_distance_reduced` (`token_link_rd_row_index`, `source_id`, `target_id`, `link_distance_threshold`, `weight`, `link_source_type`) VALUES
+(1, 'token_0001', 'token_0002', 3, 2, 'qualifications'),
+(2, 'token_0001', 'token_0004', 3, 1, 'pds'),
+(3, 'token_0003', 'token_0008', 3, 1, 'pds'),
+(4, 'token_0002', 'token_0006', 3, 2, 'responsibilities'),
+(5, 'token_0006', 'token_0009', 3, 1, 'pds');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `links_distance_reduced`
+--
+ALTER TABLE `links_distance_reduced`
+  ADD PRIMARY KEY (`token_link_rd_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `links_distance_reduced`
+--
+ALTER TABLE `links_distance_reduced`
+  MODIFY `token_link_rd_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link (reduced)', AUTO_INCREMENT=6;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:07 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir_sample_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `token_row_index` int(11) NOT NULL COMMENT 'Row index of token',
+  `token_id` varchar(15) DEFAULT NULL COMMENT 'Token alphanumeric ID',
+  `token_label` varchar(250) NOT NULL COMMENT 'The token',
+  `token_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Flag indicating whether token should be displayed in visualization and used in analyses',
+  `token_length` int(11) NOT NULL COMMENT 'Length of the token',
+  `token_stop_words_ct` int(11) DEFAULT NULL COMMENT 'Number of stop words in token',
+  `token_instance_ct` int(11) DEFAULT NULL COMMENT 'Number of token instances in source',
+  `token_entity_ct` int(11) DEFAULT NULL COMMENT 'Number of source entities of token',
+  `token_coverage_pct` float DEFAULT NULL COMMENT 'Percent coverage of token',
+  `token_source_type` varchar(25) NOT NULL COMMENT 'Source type, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token node data';
+
+--
+-- Dumping data for table `tokens`
+--
+
+INSERT INTO `tokens` (`token_row_index`, `token_id`, `token_label`, `token_display`, `token_length`, `token_stop_words_ct`, `token_instance_ct`, `token_entity_ct`, `token_coverage_pct`, `token_source_type`) VALUES
+(1, 'token_0001', 'data', 1, 1, 0, 50, 40, 1, 'pds'),
+(2, 'token_0002', 'research', 1, 1, 0, 38, 36, 0.9, 'responsibilities'),
+(3, 'token_0003', 'science', 1, 1, 0, 20, 25, 0.63, 'pds'),
+(4, 'token_0004', 'communication', 1, 1, 0, 26, 22, 0.55, 'pds'),
+(5, 'token_0005', 'curation', 1, 1, 0, 21, 35, 0.88, 'pds'),
+(6, 'token_0006', 'data management', 1, 2, 0, 12, 24, 0.6, 'qualifications'),
+(7, 'token_0007', 'research data', 0, 2, 0, 7, 20, 0.5, 'qualifications'),
+(8, 'token_0008', 'experience with', 0, 2, 1, 8, 31, 0.78, 'qualifications'),
+(9, 'token_0009', 'workshops', 1, 1, 0, 5, 12, 0.3, 'pds'),
+(10, 'token_0010', 'programming', 0, 1, 0, 4, 15, 0.38, 'responsibilities');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`token_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `token_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row index of token', AUTO_INCREMENT=11;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

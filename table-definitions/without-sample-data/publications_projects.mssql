@@ -1,0 +1,85 @@
+/*////////////////////////////////////////////////////////////////////////////////////////
+
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+////////////////////////////////////////////////////////////////////////////////////////*/
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2015 at 03:55 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publications_projects`
+--
+
+CREATE TABLE `publications_projects` (
+  `pub_row_index` int(11) NOT NULL COMMENT 'Row counter for publication_project',
+  `pub_id` varchar(15) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Unique zero-padded ID for publication/project',
+  `pub_citation` varchar(500) CHARACTER SET latin1 NOT NULL COMMENT 'Full formatted citation',
+  `pub_title` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project title',
+  `pub_type` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project type',
+  `pub_link` varchar(750) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project link',
+  `pub_year` year(4) DEFAULT NULL COMMENT 'Year of publication',
+  `cohort_year` year(4) NOT NULL COMMENT 'Cohort year of publication',
+  `contributor_fids` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'comma-delimited list of fellow IDs of contributors',
+  `pub_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'A flag whether or not to display the record for the visualization'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `publications_projects`
+--
+ALTER TABLE `publications_projects`
+  ADD PRIMARY KEY (`pub_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `publications_projects`
+--
+ALTER TABLE `publications_projects`
+  MODIFY `pub_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for publication_project';
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

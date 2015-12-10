@@ -1,0 +1,72 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:07 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir_sample_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_instances`
+--
+
+CREATE TABLE `token_instances` (
+  `token_instance_row_index` int(11) NOT NULL COMMENT 'Row counter for token instance',
+  `token_id` varchar(15) NOT NULL COMMENT 'ID of the token',
+  `token_pretext` varchar(500) DEFAULT NULL COMMENT 'Pre-text for the token instance',
+  `token_posttext` varchar(500) DEFAULT NULL COMMENT 'Post-text for the token instance',
+  `entity_id` varchar(15) NOT NULL COMMENT 'ID of the entity of the instance (position description)',
+  `entity_type` varchar(25) NOT NULL COMMENT 'Instance source type, "bio" or "pd"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token instances and their contexts';
+
+--
+-- Dumping data for table `token_instances`
+--
+
+INSERT INTO `token_instances` (`token_instance_row_index`, `token_id`, `token_pretext`, `token_posttext`, `entity_id`, `entity_type`) VALUES
+(1, 'token_0001', 'must have experience working with', 'and relevant methodologies', 'pd_0001', 'qualifications'),
+(2, 'token_0001', 'knowledge of basic', 'analysis techniques', 'pd_0002', 'qualifications'),
+(3, 'token_0001', 'develop workshops around', 'cleaning and structuring', 'pd_0003', 'pds'),
+(4, 'token_0004', 'fellows must have excellent', 'skills when working with researchers', 'pd_0004', 'responsibilities'),
+(5, 'token_0005', 'develop best practices for data', 'workflows and services', 'pd_0005', 'responsibilities'),
+(6, 'token_0008', 'fellow must have', 'data analysis software', 'pd_0006', 'qualifications'),
+(7, 'token_0010', 'fellows have knowledge of several', 'languages, such as Python', 'pd_0007', 'pds');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `token_instances`
+--
+ALTER TABLE `token_instances`
+  ADD PRIMARY KEY (`token_instance_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `token_instances`
+--
+ALTER TABLE `token_instances`
+  MODIFY `token_instance_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token instance', AUTO_INCREMENT=8;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:07 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir_sample_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance`
+--
+
+CREATE TABLE `links_distance` (
+  `token_link_row_index` int(11) NOT NULL COMMENT 'Row counter for token link',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+--
+-- Dumping data for table `links_distance`
+--
+
+INSERT INTO `links_distance` (`token_link_row_index`, `source_id`, `target_id`, `link_distance`, `weight`, `link_source_type`) VALUES
+(1, 'token_0001', 'token_0002', 5, 3, 'qualifications'),
+(2, 'token_0001', 'token_0004', 4, 7, 'pds'),
+(3, 'token_0003', 'token_0008', 2, 6, 'pds'),
+(4, 'token_0002', 'token_0006', 3, 4, 'responsibilities'),
+(5, 'token_0006', 'token_0009', 6, 2, 'pds'),
+(6, 'token_0009', 'token_0010', 10, 1, 'qualifications'),
+(7, 'token_0007', 'token_00010', 7, 2, 'qualifications'),
+(8, 'token_0004', 'token_0005', 4, 4, 'responsibilities'),
+(9, 'token_0004', 'token_0009', 8, 1, 'pds'),
+(10, 'token_0008', 'token_0002', 3, 1, 'pds');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  ADD PRIMARY KEY (`token_link_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  MODIFY `token_link_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link', AUTO_INCREMENT=11;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,90 @@
+/*////////////////////////////////////////////////////////////////////////////////////////
+
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+////////////////////////////////////////////////////////////////////////////////////////*/
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2015 at 03:53 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fellows_data`
+--
+
+CREATE TABLE `fellows_data` (
+  `fellow_row_index` int(11) NOT NULL COMMENT 'Row counter for fellow',
+  `fellow_id` varchar(15) DEFAULT NULL COMMENT 'Unique fellow ID',
+  `f_name` varchar(150) NOT NULL COMMENT 'Fellow name',
+  `f_startyear` year(4) NOT NULL COMMENT 'Fellow start year',
+  `f_endyear` year(4) NOT NULL COMMENT 'Fellow end year',
+  `f_phd` varchar(250) NOT NULL COMMENT 'Fellow Ph.D. concentration',
+  `f_phd_class` varchar(5) DEFAULT NULL COMMENT 'Arts and Humanities (AH), Social Sciences (SS), Natural Sciences (NS)',
+  `f_institution` varchar(250) NOT NULL COMMENT 'Fellow Ph.D.-granting institution',
+  `i_id` varchar(15) DEFAULT NULL COMMENT 'Institution ID',
+  `host_institution` varchar(250) DEFAULT NULL COMMENT 'Name of fellowship host institution',
+  `host_i_id` varchar(10) DEFAULT NULL COMMENT 'Host institution ID',
+  `f_location_notes` varchar(250) DEFAULT NULL COMMENT 'Institution location notes',
+  `fellow_bio` varchar(1500) DEFAULT NULL COMMENT 'Fellow short biography',
+  `fellow_dc` tinyint(1) DEFAULT NULL COMMENT 'Flags whether or not was a data curation fellow',
+  `fellow_dc_track` varchar(50) DEFAULT NULL COMMENT 'Data curation track, if applicable'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds biographical data about CLIR fellows';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fellows_data`
+--
+ALTER TABLE `fellows_data`
+  ADD PRIMARY KEY (`fellow_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fellows_data`
+--
+ALTER TABLE `fellows_data`
+  MODIFY `fellow_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for fellow';
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

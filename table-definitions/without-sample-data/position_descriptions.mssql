@@ -1,0 +1,90 @@
+/*////////////////////////////////////////////////////////////////////////////////////////
+
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+////////////////////////////////////////////////////////////////////////////////////////*/
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2015 at 03:54 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position_descriptions`
+--
+
+CREATE TABLE `position_descriptions` (
+  `pd_row_index` int(11) NOT NULL COMMENT 'Row index for position description',
+  `pd_id` varchar(15) DEFAULT NULL COMMENT 'Unique ID for position description',
+  `pd_dc` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Flag indicating whether PD is for a data curation track fellowship',
+  `pd_institution` varchar(300) NOT NULL COMMENT 'Host institution',
+  `pd_institution_description` varchar(6000) DEFAULT NULL COMMENT 'PD institution description',
+  `pd_startyear` year(4) NOT NULL COMMENT 'PD start year',
+  `pd_endyear` year(4) NOT NULL COMMENT 'PD end year',
+  `pd_title` varchar(300) NOT NULL COMMENT 'PD title',
+  `pd_description` varchar(8000) NOT NULL COMMENT 'PD description text',
+  `pd_responsibilities` varchar(5000) NOT NULL COMMENT 'PD position responsibilities',
+  `pd_qualifications_min` varchar(5000) NOT NULL COMMENT 'PD minimum qualifications',
+  `pd_qualifications_preferred` varchar(5000) DEFAULT NULL COMMENT 'PD preferred qualifications',
+  `pd_discipline` varchar(1000) NOT NULL COMMENT 'PD disciplinary focus',
+  `pd_addl_info` varchar(3000) DEFAULT NULL COMMENT 'PD additional information',
+  `pd_url` varchar(500) NOT NULL COMMENT 'PD URL'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about position descriptions';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `position_descriptions`
+--
+ALTER TABLE `position_descriptions`
+  ADD PRIMARY KEY (`pd_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `position_descriptions`
+--
+ALTER TABLE `position_descriptions`
+  MODIFY `pd_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row index for position description';
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

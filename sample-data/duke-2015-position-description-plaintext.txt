@@ -1,0 +1,86 @@
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+This file provides sample data for an example fellowship position description included in token analyses. This text in its original HTML form can be found at:
+http://www.clir.org/fellowships/postdoc/applicants/duke2015
+
+
+Duke University
+Postdoctoral Fellowship in Data Curation for Visual Studies
+ 
+
+Overview
+Duke University is offering a Postdoctoral Fellowship in Data Curation for Visual Studies, jointly appointed by the Duke University Libraries and the Department of Art, Art History, and Visual Studies. Eligible candidates will have completed a doctoral program in Art History, Digital Media, Historical and Cultural Visualization, or a related field in the past five years. This is a full-time, two-year appointment, with an annual salary of $60,000, including full benefits.
+
+With supervision and guidance provided by Duke University Libraries, the Postdoctoral Fellow will work closely with faculty and researchers in their field of research and expertise (for example, with the Wired! Lab for Visualizing the Past) to develop best practices for managing a wide variety of multimedia source materials, especially maps, models, animations, 3D reconstructions, for reuse in teaching and digital project development (see: Wired! Lab Research projects). The Fellow will explore and analyze tools and platforms, write documentation, and aid in dissemination of best practices to the wider campus community as well as assisting in training in the use of tools. These activities will culminate in defining, modeling, and testing workflows and capacities necessary for sustainable curation and long-term management and re-use of these visual materials.
+
+The ideal candidate will have both relevant academic training and experience with content management and data infrastructure development for humanities projects that have a visual data component. During the fellowship period the Fellow will work closely with the Duke University Libraries and the discipline-matched faculty and researchers to gain significant knowledge of best practices in markup languages, metadata standards, digital humanities curation, and digital repository structures and workflows. The Fellow will be expected to continue to develop his or her ongoing research within a field of study compatible with the faculty/researcher partnership. The Fellow will also participate in the activities sponsored by the Council on Library and Information Resources (CLIR) Postdoctoral Fellowship program.  
+
+The CLIR/Duke University Postdoctoral Fellowship in Data Curation for Visual Studies provides an exciting opportunity to contribute to new initiatives at one of the nation’s highest-ranked research universities, as well as to gain skills and knowledge related to emerging, innovative areas of visual studies research and teaching as well as to digital humanities curation. Through these fellowships, CLIR seeks to raise awareness and build capacity for sound data management practice throughout the academy.  Opportunities to lead, engage, or collaborate in workshops, seminars, presentations, and publications will be strongly encouraged and supported.
+
+Roles & Responsibilities
+Reporting to the Associate University Librarian for Information Technology Services, the Postdoctoral Fellow will collaborate with faculty, students, library staff, and technologists to advance the Libraries’ data curation strategy for multimedia materials and to support researchers in learning and applying best practices for digital preservation and curation. The Fellow will serve as a liaison to students and faculty, such as within the Wired! Lab, in order to gain hands-on experience working with visual materials as part of teaching and research and to better understand access and use requirements. The Fellow will partner with Libraries staff and technologists to translate these requirements into a sustainable approach to curating visual studies data and to help train graduate students and faculty in data curation. Through this research activity, the Fellow will play a key role in developing a model for visual studies data curation that will be of immediate benefit to visual studies researchers and teaching faculty at Duke University, and will contribute significantly to enhancing the Libraries’ services and programs in support of digital humanities scholarship.
+
+Specific areas of responsibility for the Postdoctoral Fellow and related tasks include:
+
+Help to develop a sustainable program for visual studies data curation
+	Explore and assess visual materials curation at peer universities and present a memorandum on best practices in digital multimedia management to Libraries staff and other Duke technologists, and faculty, researchers, and administrators engaged in visual studies data management
+	Survey the landscape of visual materials curation at Duke to determine current practice, including formats used and requirements for access and reuse
+	Research, design, and pilot the creation of a data curation program built upon sustainable workflows for organization, access, and preservation of multimedia-based collections in support of ongoing teaching/research projects. These collection materials might include images, texts, document transcriptions, geo-referenced maps, 3D models, A/V files, and other file types.
+	Analyze the pilot data curation program; make recommendations for alterations, sustainability, and lessons learned; and publish or present the outcomes both locally (to Duke stakeholders) and nationally
+	Provide researchers with instruction and guidance in visual studies data curation
+
+Recommend best practices for standardized description and for resource and data management planning for academic users within the context of multimedia-based visual studies (such as the Wired! Lab and the Ph.D. in Art, Art History and Visual Studies), with the goal of creating templates for management strategies in the following areas of research practice:
+	Collection of material from archives, conducted by individual researchers
+	Collection and management of collaboratively authored datasets, including those created or contributed to by students
+	Researcher exploration of shared content, including faceted search and retrieval as well as large-scale data analysis across collections for visualization purposes
+	Public display of database content, including via web portals, mobile applications, virtual environments, and other locales
+	Authentication and authorization system for external collaborators
+	Create and deliver training for Libraries staff related to the management and curation of visual studies data
+
+Qualifications
+Required:
+
+	Ph.D. completed within the last five years in Art History, Digital Media, Historical and Cultural Visualization, or a related field
+	Practical understanding of the research process and research data lifecycle
+	Experience or familiarity with using digital media as part of teaching or research
+	Strong organizational and documentation skills
+	Ability to engage with people in new settings as well as excellent interpersonal and communication skills
+	Willingness to participate in teaching and training initiatives related to the fellowship or area of research
+
+Desired:
+
+	Demonstrable strong scholarly research focus on visual data and/or visual studies
+	Excellent skills in project management, workflow design and management, teaching and outreach, communication and collaboration with faculty members
+	Education or experience in Library & Information Sciences or related field
+	Experience designing and implementing databases for scholarly projects
+	Experience with digital media production techniques
+	Experience coordinating and promoting programs and/or services
+	Working knowledge of various content management systems
+	Working knowledge of technical implementation of servers, software systems, etc. for the purposes of database setup and delivery
+	Working knowledge of web tools, API links etc. for cross-referencing and syndication of content
+	Familiarity with markup and metadata standards associated with Digital Humanities projects
+
+
+Compensation
+Salary is $60,000 per annum for a two-year appointment in the Libraries. Additional funding is available for conference travel and relocation expenses. Through the CLIR Postdoctoral Fellowship Program, the incumbent will also receive generous support for travel to CLIR-sponsored events for Fellows. Duke offers a comprehensive benefit package which includes both traditional benefits such as health insurance, leave time and retirement, as well as wide ranging work/life and cultural benefits. Details can be found at:  http://www.hr.duke.edu/benefits/index.php
+
+Local Guidance and Professional Development Support
+The Fellow’s supervisor will be Timothy McGeary, who serves as Associate University Librarian for Duke Libraries’ Information Technology Services. The Fellow will also be mentored by Liz Milewicz, Head of Digital Scholarship Services, and will interact with staff in several Libraries departments, including Repository Services, Preservation, Digital Scholarship Services, and Data and Visualization Services. Regular, direct work based on the area of research is expected to be with the Wired! Lab, and AAHVS staff will provide exposure to and discussion around the specific uses of visual materials, disciplinary motivations for this work, and the range of collection, exploration, and display activities that affect how these materials are curated. The staff of the AAHVS Visual Media Center will also provide valuable insight into workflows and best practices for digital image management. Other campus IT units, including the Office of Research Computing and Trinity Technology Services (which provides technology support for the College of Arts and Sciences), will provide additional guidance in development of best practices and a sustainable visual data curation strategy.

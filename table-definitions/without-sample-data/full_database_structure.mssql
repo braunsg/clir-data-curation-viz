@@ -1,0 +1,322 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:08 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fellows_data`
+--
+
+CREATE TABLE `fellows_data` (
+  `fellow_row_index` int(11) NOT NULL COMMENT 'Row counter for fellow',
+  `fellow_id` varchar(15) DEFAULT NULL COMMENT 'Unique fellow ID',
+  `f_name` varchar(150) NOT NULL COMMENT 'Fellow name',
+  `f_startyear` year(4) NOT NULL COMMENT 'Fellow start year',
+  `f_endyear` year(4) NOT NULL COMMENT 'Fellow end year',
+  `f_phd` varchar(250) NOT NULL COMMENT 'Fellow Ph.D. concentration',
+  `f_phd_class` varchar(5) DEFAULT NULL COMMENT 'Arts and Humanities (AH), Social Sciences (SS), Natural Sciences (NS)',
+  `f_institution` varchar(250) NOT NULL COMMENT 'Fellow Ph.D.-granting institution',
+  `i_id` varchar(15) DEFAULT NULL COMMENT 'Institution ID',
+  `host_institution` varchar(250) DEFAULT NULL COMMENT 'Name of fellowship host institution',
+  `host_i_id` varchar(10) DEFAULT NULL COMMENT 'Host institution ID',
+  `f_location_notes` varchar(250) DEFAULT NULL COMMENT 'Institution location notes',
+  `fellow_bio` varchar(1500) DEFAULT NULL COMMENT 'Fellow short biography',
+  `fellow_dc` tinyint(1) DEFAULT NULL COMMENT 'Flags whether or not was a data curation fellow',
+  `fellow_dc_track` varchar(50) DEFAULT NULL COMMENT 'Data curation track, if applicable'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds biographical data about CLIR fellows';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `institution_data`
+--
+
+CREATE TABLE `institution_data` (
+  `i_row_index` int(11) NOT NULL COMMENT 'Row counter for institution',
+  `i_id` varchar(15) DEFAULT NULL COMMENT 'Institution ID unique',
+  `i_name` varchar(500) NOT NULL COMMENT 'Institution name',
+  `i_dc_host_status` varchar(1) DEFAULT NULL COMMENT 'Data curation track host institution status',
+  `i_lat` varchar(150) NOT NULL COMMENT 'Institution latitude',
+  `i_lon` varchar(150) NOT NULL COMMENT 'Institution longitude'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds institution latitude and longitude data';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance`
+--
+
+CREATE TABLE `links_distance` (
+  `token_link_row_index` int(11) NOT NULL COMMENT 'Row counter for token link',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance_reduced`
+--
+
+CREATE TABLE `links_distance_reduced` (
+  `token_link_rd_row_index` int(11) NOT NULL COMMENT 'Row counter for token link (reduced)',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance_threshold` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position_descriptions`
+--
+
+CREATE TABLE `position_descriptions` (
+  `pd_row_index` int(11) NOT NULL COMMENT 'Row index for position description',
+  `pd_id` varchar(15) DEFAULT NULL COMMENT 'Unique ID for position description',
+  `pd_dc` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Flag indicating whether PD is for a data curation track fellowship',
+  `pd_institution` varchar(300) NOT NULL COMMENT 'Host institution',
+  `pd_institution_description` varchar(6000) DEFAULT NULL COMMENT 'PD institution description',
+  `pd_startyear` year(4) NOT NULL COMMENT 'PD start year',
+  `pd_endyear` year(4) NOT NULL COMMENT 'PD end year',
+  `pd_title` varchar(300) NOT NULL COMMENT 'PD title',
+  `pd_description` varchar(8000) NOT NULL COMMENT 'PD description text',
+  `pd_responsibilities` varchar(5000) NOT NULL COMMENT 'PD position responsibilities',
+  `pd_qualifications_min` varchar(5000) NOT NULL COMMENT 'PD minimum qualifications',
+  `pd_qualifications_preferred` varchar(5000) DEFAULT NULL COMMENT 'PD preferred qualifications',
+  `pd_discipline` varchar(1000) NOT NULL COMMENT 'PD disciplinary focus',
+  `pd_addl_info` varchar(3000) DEFAULT NULL COMMENT 'PD additional information',
+  `pd_url` varchar(500) NOT NULL COMMENT 'PD URL'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about position descriptions';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publications_projects`
+--
+
+CREATE TABLE `publications_projects` (
+  `pub_row_index` int(11) NOT NULL COMMENT 'Row counter for publication_project',
+  `pub_id` varchar(15) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Unique zero-padded ID for publication/project',
+  `pub_citation` varchar(500) CHARACTER SET latin1 NOT NULL COMMENT 'Full formatted citation',
+  `pub_title` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project title',
+  `pub_type` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project type',
+  `pub_link` varchar(750) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project link',
+  `pub_year` year(4) DEFAULT NULL COMMENT 'Year of publication',
+  `cohort_year` year(4) NOT NULL COMMENT 'Cohort year of publication',
+  `contributor_fids` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'comma-delimited list of fellow IDs of contributors',
+  `pub_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'A flag whether or not to display the record for the visualization'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `token_row_index` int(11) NOT NULL COMMENT 'Row index of token',
+  `token_id` varchar(15) DEFAULT NULL COMMENT 'Token alphanumeric ID',
+  `token_label` varchar(250) NOT NULL COMMENT 'The token',
+  `token_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Flag indicating whether token should be displayed in visualization and used in analyses',
+  `token_length` int(11) NOT NULL COMMENT 'Length of the token',
+  `token_stop_words_ct` int(11) DEFAULT NULL COMMENT 'Number of stop words in token',
+  `token_instance_ct` int(11) DEFAULT NULL COMMENT 'Number of token instances in source',
+  `token_entity_ct` int(11) DEFAULT NULL COMMENT 'Number of source entities of token',
+  `token_coverage_pct` float DEFAULT NULL COMMENT 'Percent coverage of token',
+  `token_source_type` varchar(25) NOT NULL COMMENT 'Source type, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token node data';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens_reduced`
+--
+
+CREATE TABLE `tokens_reduced` (
+  `token_id` varchar(15) NOT NULL COMMENT 'Unique ID of the token (from ''tokens'')',
+  `token_label` varchar(250) NOT NULL COMMENT 'The token',
+  `token_length` int(11) NOT NULL COMMENT 'Length of the token',
+  `token_instance_ct` int(11) DEFAULT NULL COMMENT 'Number of token instances in source',
+  `token_coverage_pct` float DEFAULT NULL COMMENT 'Percent coverage of token',
+  `token_source_type` varchar(25) NOT NULL COMMENT 'Source type, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token node data';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_counts_over_time`
+--
+
+CREATE TABLE `token_counts_over_time` (
+  `token_count_row_index` int(11) NOT NULL COMMENT 'Row counter for token count data',
+  `token_id` varchar(15) NOT NULL COMMENT 'Unique ID for the token',
+  `count_2012` int(11) NOT NULL,
+  `count_2013` int(11) NOT NULL,
+  `count_2014` int(11) NOT NULL,
+  `count_2015` int(11) NOT NULL,
+  `pct_2012` float NOT NULL COMMENT 'Percent coverage 2012',
+  `pct_2013` float NOT NULL COMMENT 'Percent coverage 2013',
+  `pct_2014` float NOT NULL COMMENT 'Percent coverage 2014',
+  `pct_2015` float NOT NULL COMMENT 'Percent coverage 2015'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token counts over time';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_instances`
+--
+
+CREATE TABLE `token_instances` (
+  `token_instance_row_index` int(11) NOT NULL COMMENT 'Row counter for token instance',
+  `token_id` varchar(15) NOT NULL COMMENT 'ID of the token',
+  `token_pretext` varchar(500) DEFAULT NULL COMMENT 'Pre-text for the token instance',
+  `token_posttext` varchar(500) DEFAULT NULL COMMENT 'Post-text for the token instance',
+  `entity_id` varchar(15) NOT NULL COMMENT 'ID of the entity of the instance (position description)',
+  `entity_type` varchar(25) NOT NULL COMMENT 'Instance source type, "bio" or "pd"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token instances and their contexts';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fellows_data`
+--
+ALTER TABLE `fellows_data`
+  ADD PRIMARY KEY (`fellow_row_index`);
+
+--
+-- Indexes for table `institution_data`
+--
+ALTER TABLE `institution_data`
+  ADD PRIMARY KEY (`i_row_index`),
+  ADD UNIQUE KEY `i_name` (`i_name`);
+
+--
+-- Indexes for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  ADD PRIMARY KEY (`token_link_row_index`);
+
+--
+-- Indexes for table `links_distance_reduced`
+--
+ALTER TABLE `links_distance_reduced`
+  ADD PRIMARY KEY (`token_link_rd_row_index`);
+
+--
+-- Indexes for table `position_descriptions`
+--
+ALTER TABLE `position_descriptions`
+  ADD PRIMARY KEY (`pd_row_index`);
+
+--
+-- Indexes for table `publications_projects`
+--
+ALTER TABLE `publications_projects`
+  ADD PRIMARY KEY (`pub_row_index`);
+
+--
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`token_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_row_index`);
+
+--
+-- Indexes for table `tokens_reduced`
+--
+ALTER TABLE `tokens_reduced`
+  ADD PRIMARY KEY (`token_id`),
+  ADD UNIQUE KEY `token_id` (`token_id`);
+
+--
+-- Indexes for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  ADD PRIMARY KEY (`token_count_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_id`);
+
+--
+-- Indexes for table `token_instances`
+--
+ALTER TABLE `token_instances`
+  ADD PRIMARY KEY (`token_instance_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fellows_data`
+--
+ALTER TABLE `fellows_data`
+  MODIFY `fellow_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for fellow', AUTO_INCREMENT=131;
+--
+-- AUTO_INCREMENT for table `institution_data`
+--
+ALTER TABLE `institution_data`
+  MODIFY `i_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for institution', AUTO_INCREMENT=103;
+--
+-- AUTO_INCREMENT for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  MODIFY `token_link_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link', AUTO_INCREMENT=18087;
+--
+-- AUTO_INCREMENT for table `links_distance_reduced`
+--
+ALTER TABLE `links_distance_reduced`
+  MODIFY `token_link_rd_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link (reduced)', AUTO_INCREMENT=2143;
+--
+-- AUTO_INCREMENT for table `position_descriptions`
+--
+ALTER TABLE `position_descriptions`
+  MODIFY `pd_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row index for position description', AUTO_INCREMENT=37;
+--
+-- AUTO_INCREMENT for table `publications_projects`
+--
+ALTER TABLE `publications_projects`
+  MODIFY `pub_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for publication_project', AUTO_INCREMENT=105;
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `token_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row index of token', AUTO_INCREMENT=19824;
+--
+-- AUTO_INCREMENT for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  MODIFY `token_count_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token count data', AUTO_INCREMENT=601;
+--
+-- AUTO_INCREMENT for table `token_instances`
+--
+ALTER TABLE `token_instances`
+  MODIFY `token_instance_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token instance', AUTO_INCREMENT=8373;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

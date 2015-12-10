@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:07 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir_sample_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_counts_over_time`
+--
+
+CREATE TABLE `token_counts_over_time` (
+  `token_count_row_index` int(11) NOT NULL COMMENT 'Row counter for token count data',
+  `token_id` varchar(15) NOT NULL COMMENT 'Unique ID for the token',
+  `count_2012` int(11) NOT NULL,
+  `count_2013` int(11) NOT NULL,
+  `count_2014` int(11) NOT NULL,
+  `count_2015` int(11) NOT NULL,
+  `pct_2012` float NOT NULL COMMENT 'Percent coverage 2012',
+  `pct_2013` float NOT NULL COMMENT 'Percent coverage 2013',
+  `pct_2014` float NOT NULL COMMENT 'Percent coverage 2014',
+  `pct_2015` float NOT NULL COMMENT 'Percent coverage 2015'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token counts over time';
+
+--
+-- Dumping data for table `token_counts_over_time`
+--
+
+INSERT INTO `token_counts_over_time` (`token_count_row_index`, `token_id`, `count_2012`, `count_2013`, `count_2014`, `count_2015`, `pct_2012`, `pct_2013`, `pct_2014`, `pct_2015`) VALUES
+(1, 'token_0001', 5, 10, 10, 25, 0.05, 0.3, 0.9, 1),
+(2, 'token_0002', 6, 10, 8, 14, 0.08, 0.25, 0.57, 0.9),
+(3, 'token_0003', 5, 4, 3, 8, 0.09, 0.26, 0.75, 0.9),
+(4, 'token_0004', 4, 3, 8, 11, 0.1, 0.4, 0.7, 0.8),
+(5, 'token_0005', 0, 3, 3, 15, 0.05, 0.3, 0.8, 0.9),
+(6, 'token_0006', 1, 2, 3, 6, 0.03, 0.3, 0.6, 0.7),
+(7, 'token_0007', 1, 1, 2, 3, 0.02, 0.14, 0.55, 0.6),
+(8, 'token_0008', 1, 1, 2, 4, 0.06, 0.3, 0.7, 0.8),
+(9, 'token_0009', 0, 0, 1, 4, 0.11, 0.32, 0.5, 0.6),
+(10, 'token_0010', 0, 0, 1, 3, 0.1, 0.2, 0.3, 0.4);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  ADD PRIMARY KEY (`token_count_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  MODIFY `token_count_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token count data', AUTO_INCREMENT=11;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

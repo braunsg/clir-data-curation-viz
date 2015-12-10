@@ -1,0 +1,799 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 09, 2015 at 09:08 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir_sample_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fellows_data`
+--
+
+CREATE TABLE `fellows_data` (
+  `fellow_row_index` int(11) NOT NULL COMMENT 'Row counter for fellow',
+  `fellow_id` varchar(15) DEFAULT NULL COMMENT 'Unique fellow ID',
+  `f_name` varchar(150) NOT NULL COMMENT 'Fellow name',
+  `f_startyear` year(4) NOT NULL COMMENT 'Fellow start year',
+  `f_endyear` year(4) NOT NULL COMMENT 'Fellow end year',
+  `f_phd` varchar(250) NOT NULL COMMENT 'Fellow Ph.D. concentration',
+  `f_phd_class` varchar(5) DEFAULT NULL COMMENT 'Arts and Humanities (AH), Social Sciences (SS), Natural Sciences (NS)',
+  `f_institution` varchar(250) NOT NULL COMMENT 'Fellow Ph.D.-granting institution',
+  `i_id` varchar(15) DEFAULT NULL COMMENT 'Institution ID',
+  `host_institution` varchar(250) DEFAULT NULL COMMENT 'Name of fellowship host institution',
+  `host_i_id` varchar(10) DEFAULT NULL COMMENT 'Host institution ID',
+  `f_location_notes` varchar(250) DEFAULT NULL COMMENT 'Institution location notes',
+  `fellow_bio` varchar(1500) DEFAULT NULL COMMENT 'Fellow short biography',
+  `fellow_dc` tinyint(1) DEFAULT NULL COMMENT 'Flags whether or not was a data curation fellow',
+  `fellow_dc_track` varchar(50) DEFAULT NULL COMMENT 'Data curation track, if applicable'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds biographical data about CLIR fellows';
+
+--
+-- Dumping data for table `fellows_data`
+--
+
+INSERT INTO `fellows_data` (`fellow_row_index`, `fellow_id`, `f_name`, `f_startyear`, `f_endyear`, `f_phd`, `f_phd_class`, `f_institution`, `i_id`, `host_institution`, `host_i_id`, `f_location_notes`, `fellow_bio`, `fellow_dc`, `fellow_dc_track`) VALUES
+(1, 'f_00001', 'Freeda Clermont', 2012, 2014, ' Cultural Studies', ' NS', 'Amherst College', 'i_0001', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(2, 'f_00002', 'Socorro Groce', 2008, 2010, ' Political Science', ' AH', 'University of Michigan, Ann Arbor', 'i_0002', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(3, 'f_00003', 'Coleman Blish', 2000, 2002, ' Economics', ' SS', 'Harvard University', 'i_0003', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(4, 'f_00004', 'Beverlee Gipe', 2010, 2012, ' Neuroscience', ' NS', 'Case Western Reserve University', 'i_0004', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(5, 'f_00005', 'Peg Kivi', 2013, 2015, ' Phiosophy', ' SS', 'Stanford University', 'i_0005', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(6, 'f_00006', 'Maggie Mcduffee', 2013, 2015, ' Neuroscience', ' SS', 'University of California, Los Angeles', 'i_0006', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(7, 'f_00007', 'Faustino Tartt', 2002, 2004, ' Economics', ' AH', 'University of Maryland, College Park', 'i_0007', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(8, 'f_00008', 'Genevie Shows', 2004, 2006, ' Political Science', ' NS', 'Centre College', 'i_0008', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(9, 'f_00009', 'Therese Broeckel', 2014, 2016, ' English', ' SS', 'Sewanee University of the South', 'i_0009', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(10, 'f_00010', 'Brock Mumper', 2014, 2016, ' History', ' NS', 'University of California, Berkeley', 'i_0010', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(11, 'f_00011', 'Christina Salmons', 2015, 2017, ' Neuroscience', ' NS', 'Franklin and Marshall College', 'i_0011', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(12, 'f_00012', 'Belle Dagley', 2005, 2007, ' Phiosophy', ' SS', 'Indiana University, Bloomington', 'i_0012', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(13, 'f_00013', 'Rodger Haith', 2001, 2003, ' Cultural Studies', ' SS', 'College of the Holy Cross', 'i_0013', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(14, 'f_00014', 'Magnolia Host', 2001, 2003, ' Phiosophy', ' NS', 'Lafayette College', 'i_0014', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(15, 'f_00015', 'Rhea Clemans', 2002, 2004, ' Political Science', ' NS', 'Trinity College', 'i_0015', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(16, 'f_00016', 'Carla Brase', 2006, 2008, ' English', ' NS', 'Yale University', 'i_0016', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(17, 'f_00017', 'Macie Stengel', 2014, 2016, ' Cultural Studies', ' AH', 'Haverford College', 'i_0017', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(18, 'f_00018', 'Christoper Malott', 2003, 2005, ' Cultural Studies', ' NS', 'Middlebury College', 'i_0018', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(19, 'f_00019', 'Eric Gallman', 2003, 2005, ' Economics', ' NS', 'Rice University', 'i_0019', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(20, 'f_00020', 'Marquita Wiser', 2001, 2003, ' Economics', ' NS', 'California Institute of Technology', 'i_0020', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(21, 'f_00021', 'Patrina Trahan', 2011, 2013, ' Phiosophy', ' AH', 'Williams College', 'i_0021', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(22, 'f_00022', 'Phillip Damewood', 2011, 2013, ' Economics', ' SS', 'Southern Methodist University', 'i_0022', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(23, 'f_00023', 'Akilah Selig', 2012, 2014, ' Political Science', ' SS', 'Vanderbilt University', 'i_0023', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(24, 'f_00024', 'Sharleen Hinkel', 2013, 2015, ' History', ' AH', 'Colby College', 'i_0024', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(25, 'f_00025', 'Wendy Bushee', 2012, 2014, ' Phiosophy', ' NS', 'Carnegie Mellon University', 'i_0025', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(26, 'f_00026', 'Kelly Sarinana', 2002, 2004, ' History', ' AH', 'Princeton University', 'i_0026', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(27, 'f_00027', 'Roxane Precourt', 2008, 2010, ' Neuroscience', ' AH', 'Northwestern University', 'i_0027', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(28, 'f_00028', 'Bettye Sperry', 2011, 2013, ' Political Science', ' SS', 'Whitman College', 'i_0028', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(29, 'f_00029', 'Camelia Schendel', 2013, 2015, ' Neuroscience', ' NS', 'Brigham Young University', 'i_0029', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(30, 'f_00030', 'Moses Yamanaka', 2010, 2012, ' English', ' NS', 'Washington University in Saint Louis', 'i_0030', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(31, 'f_00031', 'Ariane Ditzler', 2003, 2005, ' English', ' SS', 'Grinnell College', 'i_0031', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(32, 'f_00032', 'Taren Woodberry', 2012, 2014, ' Cultural Studies', ' SS', 'Wheaton College', 'i_0032', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(33, 'f_00033', 'Renae Cappello', 2005, 2007, ' English', ' SS', 'Carleton College', 'i_0033', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(34, 'f_00034', 'Joline Bess', 2015, 2017, ' English', ' SS', 'University of Notre Dame', 'i_0034', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(35, 'f_00035', 'Tianna Kimmons', 2015, 2017, ' History', ' AH', 'Boston College', 'i_0035', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(36, 'f_00036', 'Sunny Bovee', 2007, 2009, ' Economics', ' SS', 'Pepperdine University', 'i_0036', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(37, 'f_00037', 'Fernande Bongiorno', 2012, 2014, ' Neuroscience', ' AH', 'University of California, Davis', 'i_0037', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(38, 'f_00038', 'Viola Gaudreau', 2002, 2004, ' Economics', ' NS', 'Harvey Mudd College', 'i_0038', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(39, 'f_00039', 'Alexia Claro', 2003, 2005, ' Phiosophy', ' NS', 'Dartmouth College', 'i_0039', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(40, 'f_00040', 'Wai Guerrera', 2011, 2013, ' Political Science', ' AH', 'Davidson College', 'i_0040', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(41, 'f_00041', 'Damien Swoboda', 2007, 2009, ' Political Science', ' NS', 'New York University', 'i_0041', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(42, 'f_00042', 'Keturah Mahaney', 2006, 2008, ' History', ' NS', 'United States Naval Academy', 'i_0042', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(43, 'f_00043', 'Alix Bizzell', 2001, 2003, ' Neuroscience', ' NS', 'University of Illinois, Urbana-Champaign', 'i_0043', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(44, 'f_00044', 'Hisako Cormack', 2000, 2002, ' Phiosophy', ' NS', 'University of Georgia', 'i_0044', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(45, 'f_00045', 'Rosio Lefkowitz', 2008, 2010, ' Economics', ' AH', 'Johns Hopkins University', 'i_0045', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(46, 'f_00046', 'Numbers Escobedo', 2003, 2005, ' Cultural Studies', ' AH', 'United States Coast Guard Academy', 'i_0046', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(47, 'f_00047', 'Mila Vandervoort', 2012, 2014, ' Economics', ' AH', 'University of Wisconsin, Madison', 'i_0047', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(48, 'f_00048', 'Mellisa Nadler', 2007, 2009, ' English', ' AH', 'Georgetown University', 'i_0048', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(49, 'f_00049', 'Kendrick Hallett', 2009, 2011, ' History', ' NS', 'Smith College', 'i_0049', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(50, 'f_00050', 'Fletcher Manseau', 2001, 2003, ' Neuroscience', ' AH', 'College of William and Mary', 'i_0050', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(51, 'f_00051', 'Bret Cavanaugh', 2005, 2007, ' History', ' SS', 'Scripps College', 'i_0051', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(52, 'f_00052', 'Kendal Darcy', 2003, 2005, ' Neuroscience', ' SS', 'Boston University', 'i_0052', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(53, 'f_00053', 'Kasey Dahlman', 2010, 2012, ' Neuroscience', ' AH', 'Barnard College', 'i_0053', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(54, 'f_00054', 'Holli Erion', 2014, 2016, ' Phiosophy', ' SS', 'Hamilton College', 'i_0054', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(55, 'f_00055', 'Alecia Edenfield', 2010, 2012, ' History', ' SS', 'University of Florida', 'i_0055', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(56, 'f_00056', 'Shanell Boyd', 2009, 2011, ' Cultural Studies', ' SS', 'University of Texas, Austin', 'i_0056', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(57, 'f_00057', 'Luella Merriweather', 2008, 2010, ' Political Science', ' NS', 'Villanova University', 'i_0057', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(58, 'f_00058', 'Doretha Greenspan', 2002, 2004, ' History', ' NS', 'University of Virginia', 'i_0058', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(59, 'f_00059', 'Leesa Pollock', 2007, 2009, ' Cultural Studies', ' AH', 'Oberlin College', 'i_0059', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(60, 'f_00060', 'Bethel Felt', 2004, 2006, ' Phiosophy', ' SS', 'University of Washington', 'i_0060', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(61, 'f_00061', 'Bruce Mcnutt', 2015, 2017, ' History', ' AH', 'George Washington University', 'i_0061', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(62, 'f_00062', 'Rocco Nease', 2008, 2010, ' English', ' NS', 'Wesleyan University', 'i_0062', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(63, 'f_00063', 'Rashad Kridler', 2004, 2006, ' Economics', ' NS', 'Columbia University', 'i_0063', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(64, 'f_00064', 'Georgina Queen', 2008, 2010, ' Neuroscience', ' SS', 'Duke University', 'i_0064', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(65, 'f_00065', 'Malissa Geier', 2001, 2003, ' Cultural Studies', ' NS', 'Georgia Institute of Technology', 'i_0065', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(66, 'f_00066', 'Walter Jaquez', 2000, 2002, ' Neuroscience', ' SS', 'Bryn Mawr College', 'i_0066', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(67, 'f_00067', 'Jaclyn Theis', 2011, 2013, ' Economics', ' SS', 'Wellesley College', 'i_0067', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(68, 'f_00068', 'Neda Tourville', 2015, 2017, ' Phiosophy', ' NS', 'Virginia Military Institute', 'i_0068', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(69, 'f_00069', 'Lory Curto', 2007, 2009, ' Economics', ' SS', 'Swarthmore College', 'i_0069', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(70, 'f_00070', 'Nathanial Donelan', 2004, 2006, ' Economics', ' AH', 'DePauw University', 'i_0070', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(71, 'f_00071', 'Eboni Adams', 2007, 2009, ' Neuroscience', ' SS', 'Cornell University', 'i_0071', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(72, 'f_00072', 'Janetta Copher', 2010, 2012, ' Neuroscience', ' NS', 'Reed College', 'i_0072', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(73, 'f_00073', 'Stan Mcadams', 2010, 2012, ' History', ' NS', 'University of Pennsylvania', 'i_0073', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(74, 'f_00074', 'Marylin Lentini', 2002, 2004, ' English', ' NS', 'University of Richmond', 'i_0074', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(75, 'f_00075', 'Virginia Hagan', 2010, 2012, ' History', ' SS', 'University of Southern California', 'i_0075', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(76, 'f_00076', 'Erminia Addy', 2008, 2010, ' English', ' NS', 'Washington and Lee University', 'i_0076', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(77, 'f_00077', 'Hyacinth Fauntleroy', 2010, 2012, ' Neuroscience', ' NS', 'Lehigh University', 'i_0077', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(78, 'f_00078', 'Jazmin Rorie', 2006, 2008, ' Economics', ' AH', 'United States Air Force Academy', 'i_0078', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(79, 'f_00079', 'Oleta Bratcher', 2009, 2011, ' Political Science', ' AH', 'Colgate University', 'i_0079', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(80, 'f_00080', 'Kena Land', 2012, 2014, ' Economics', ' AH', 'Bowdoin College', 'i_0080', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(81, 'f_00081', 'Anastacia Loughran', 2003, 2005, ' Phiosophy', ' SS', 'Pomona College', 'i_0081', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(82, 'f_00082', 'Dotty Lytton', 2003, 2005, ' Economics', ' NS', 'Brown University', 'i_0082', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(83, 'f_00083', 'Elmo Etsitty', 2013, 2015, ' History', ' SS', 'Vassar College', 'i_0083', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(84, 'f_00084', 'Marvella Sons', 2007, 2009, ' Cultural Studies', ' AH', 'Pennsylvania State University, University Park', 'i_0084', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(85, 'f_00085', 'Iesha Whitner', 2000, 2002, ' Political Science', ' NS', 'Union College', 'i_0085', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(86, 'f_00086', 'Arla Delp', 2010, 2012, ' Phiosophy', ' SS', 'University of California, Santa Barbara', 'i_0086', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(87, 'f_00087', 'Dia Desalvo', 2002, 2004, ' History', ' NS', 'University of Rochester', 'i_0087', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(88, 'f_00088', 'Joanna Tripoli', 2010, 2012, ' Cultural Studies', ' AH', 'United States Military Academy', 'i_0088', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(89, 'f_00089', 'Pierre Doutt', 2001, 2003, ' Political Science', ' NS', 'Mount Holyoke College', 'i_0089', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(90, 'f_00090', 'Chiquita Rosenblum', 2014, 2016, ' Cultural Studies', ' SS', 'University of North Carolina, Chapel Hill', 'i_0090', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(91, 'f_00091', 'Adriene Binford', 2001, 2003, ' Cultural Studies', ' NS', 'Kenyon College', 'i_0091', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(92, 'f_00092', 'Alvin Hendon', 2007, 2009, ' Political Science', ' AH', 'Macalester College', 'i_0092', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(93, 'f_00093', 'Kermit Hetzler', 2006, 2008, ' Neuroscience', ' NS', 'Massachusetts Institute of Technology', 'i_0093', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(94, 'f_00094', 'Sunshine Rendon', 2014, 2016, ' Cultural Studies', ' SS', 'Brandeis University', 'i_0094', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(95, 'f_00095', 'Lanelle Hussey', 2015, 2017, ' Cultural Studies', ' SS', 'Wake Forest University', 'i_0095', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(96, 'f_00096', 'Quintin Strasser', 2010, 2012, ' English', ' NS', 'Cooper Union', 'i_0096', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(97, 'f_00097', 'Lee Mikkelsen', 2008, 2010, ' History', ' SS', 'Tufts University', 'i_0097', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(98, 'f_00098', 'Jeni Presnell', 2006, 2008, ' English', ' SS', 'Colorado College', 'i_0098', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(99, 'f_00099', 'Ingrid Grasser', 2002, 2004, ' Neuroscience', ' SS', 'Santa Clara University', 'i_0099', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(100, 'f_00100', 'Armando Pinales', 2008, 2010, ' Phiosophy', ' AH', 'University of Chicago', 'i_0100', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(101, 'f_00101', 'Mireille Mckeithan', 2006, 2008, ' Phiosophy', ' NS', 'Trinity College', 'i_0101', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(102, 'f_00102', 'Letha Lubinsky', 2002, 2004, ' Political Science', ' NS', 'Johns Hopkins University', 'i_0102', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(103, 'f_00103', 'Agatha Alexandria', 2000, 2002, ' English', ' NS', 'Virginia Military Institute', 'i_0103', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(104, 'f_00104', 'Flavia Figueroa', 2011, 2013, ' Political Science', ' SS', 'Swarthmore College', 'i_0104', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(105, 'f_00105', 'Ariane Astorga', 2001, 2003, ' English', ' AH', 'DePauw University', 'i_0105', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(106, 'f_00106', 'Robert Rawling', 2014, 2016, ' Cultural Studies', ' AH', 'Cornell University', 'i_0106', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(107, 'f_00107', 'Christiane Condie', 2008, 2010, ' Phiosophy', ' SS', 'Reed College', 'i_0107', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(108, 'f_00108', 'Lynetta Licari', 2000, 2002, ' Neuroscience', ' SS', 'University of Pennsylvania', 'i_0108', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(109, 'f_00109', 'Teresia Truss', 2003, 2005, ' Economics', ' AH', 'University of Richmond', 'i_0109', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(110, 'f_00110', 'Lucina Leffel', 2013, 2015, ' Political Science', ' NS', 'University of Southern California', 'i_0110', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(111, 'f_00111', 'Anya Adamson', 2007, 2009, ' Phiosophy', ' AH', 'Washington and Lee University', 'i_0111', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(112, 'f_00112', 'Karissa Kimbrel', 2002, 2004, ' History', ' AH', 'Lehigh University', 'i_0112', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(113, 'f_00113', 'Dede Dykeman', 2001, 2003, ' Political Science', ' NS', 'United States Air Force Academy', 'i_0113', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(114, 'f_00114', 'Clair Craw', 2015, 2017, ' Cultural Studies', ' NS', 'Colgate University', 'i_0114', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(115, 'f_00115', 'Kristal Kapp', 2014, 2016, ' Political Science', ' AH', 'Bowdoin College', 'i_0115', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(116, 'f_00116', 'Lena Lan', 2000, 2002, ' Neuroscience', ' NS', 'Pomona College', 'i_0116', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(117, 'f_00117', 'Tonie Troupe', 2002, 2004, ' Phiosophy', ' NS', 'Brown University', 'i_0117', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(118, 'f_00118', 'Aja Atherton', 2009, 2011, ' History', ' AH', 'Vassar College', 'i_0118', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(119, 'f_00119', 'Easter Edgecomb', 2007, 2009, ' English', ' SS', 'Pennsylvania State University, University Park', 'i_0119', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(120, 'f_00120', 'Kitty Kring', 2014, 2016, ' English', ' SS', 'Union College', 'i_0120', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(121, 'f_00121', 'Lang Livingstone', 2003, 2005, ' Cultural Studies', ' SS', 'Cornell University', 'i_0121', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(122, 'f_00122', 'Manual Malcom', 2014, 2016, ' English', ' NS', 'Reed College', 'i_0122', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(123, 'f_00123', 'Neville Nordberg', 2005, 2007, ' English', ' AH', 'University of Pennsylvania', 'i_0123', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(124, 'f_00124', 'Sharda Schafer', 2014, 2016, ' Economics', ' SS', 'University of Richmond', 'i_0124', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(125, 'f_00125', 'Karon Klima', 2009, 2011, ' Political Science', ' NS', 'University of Southern California', 'i_0125', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(126, 'f_00126', 'Rozanne Rigg', 2002, 2004, ' Cultural Studies', ' NS', 'Washington and Lee University', 'i_0126', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(127, 'f_00127', 'Donella Dantonio', 2005, 2007, ' Phiosophy', ' SS', 'Lehigh University', 'i_0127', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(128, 'f_00128', 'Pattie Palmieri', 2006, 2008, ' Economics', ' AH', 'United States Air Force Academy', 'i_0128', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(129, 'f_00129', 'Bettye Bayne', 2003, 2005, ' English', ' SS', 'Colgate University', 'i_0129', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL'),
+(130, 'f_00130', 'Xochitl Xavier', 2015, 2017, ' Phiosophy', ' AH', 'Bowdoin College', 'i_0130', ' NULL', ' NULL', ' NULL', ' NULL', 0, ' NULL');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `institution_data`
+--
+
+CREATE TABLE `institution_data` (
+  `i_row_index` int(11) NOT NULL COMMENT 'Row counter for institution',
+  `i_id` varchar(15) DEFAULT NULL COMMENT 'Institution ID unique',
+  `i_name` varchar(500) NOT NULL COMMENT 'Institution name',
+  `i_dc_host_status` varchar(1) DEFAULT NULL COMMENT 'Data curation track host institution status',
+  `i_lat` varchar(150) NOT NULL COMMENT 'Institution latitude',
+  `i_lon` varchar(150) NOT NULL COMMENT 'Institution longitude'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds institution latitude and longitude data';
+
+--
+-- Dumping data for table `institution_data`
+--
+
+INSERT INTO `institution_data` (`i_row_index`, `i_id`, `i_name`, `i_dc_host_status`, `i_lat`, `i_lon`) VALUES
+(1, 'i_0001', 'Amherst College', 'Y', '0.00', '0.00'),
+(2, 'i_0002', 'University of Michigan, Ann Arbor', 'Y', '0.00', '0.00'),
+(3, 'i_0003', 'Harvard University', 'N', '0.00', '0.00'),
+(4, 'i_0004', 'Case Western Reserve University', 'N', '0.00', '0.00'),
+(5, 'i_0005', 'Stanford University', 'N', '0.00', '0.00'),
+(6, 'i_0006', 'University of California, Los Angeles', 'Y', '0.00', '0.00'),
+(7, 'i_0007', 'University of Maryland, College Park', 'N', '0.00', '0.00'),
+(8, 'i_0008', 'Centre College', 'N', '0.00', '0.00'),
+(9, 'i_0009', 'Sewanee University of the South', 'N', '0.00', '0.00'),
+(10, 'i_0010', 'University of California, Berkeley', 'N', '0.00', '0.00'),
+(11, 'i_0011', 'Franklin and Marshall College', 'Y', '0.00', '0.00'),
+(12, 'i_0012', 'Indiana University, Bloomington', 'Y', '0.00', '0.00'),
+(13, 'i_0013', 'College of the Holy Cross', 'N', '0.00', '0.00'),
+(14, 'i_0014', 'Lafayette College', 'N', '0.00', '0.00'),
+(15, 'i_0015', 'Trinity College', 'N', '0.00', '0.00'),
+(16, 'i_0016', 'Yale University', 'Y', '0.00', '0.00'),
+(17, 'i_0017', 'Haverford College', 'N', '0.00', '0.00'),
+(18, 'i_0018', 'Middlebury College', 'Y', '0.00', '0.00'),
+(19, 'i_0019', 'Rice University', 'Y', '0.00', '0.00'),
+(20, 'i_0020', 'California Institute of Technology', 'Y', '0.00', '0.00'),
+(21, 'i_0021', 'Williams College', 'Y', '0.00', '0.00'),
+(22, 'i_0022', 'Southern Methodist University', 'N', '0.00', '0.00'),
+(23, 'i_0023', 'Vanderbilt University', 'N', '0.00', '0.00'),
+(24, 'i_0024', 'Colby College', 'N', '0.00', '0.00'),
+(25, 'i_0025', 'Carnegie Mellon University', 'N', '0.00', '0.00'),
+(26, 'i_0026', 'Princeton University', 'Y', '0.00', '0.00'),
+(27, 'i_0027', 'Northwestern University', 'N', '0.00', '0.00'),
+(28, 'i_0028', 'Whitman College', 'N', '0.00', '0.00'),
+(29, 'i_0029', 'Brigham Young University', 'N', '0.00', '0.00'),
+(30, 'i_0030', 'Washington University in Saint Louis', 'Y', '0.00', '0.00'),
+(31, 'i_0031', 'Grinnell College', 'Y', '0.00', '0.00'),
+(32, 'i_0032', 'Wheaton College', 'N', '0.00', '0.00'),
+(33, 'i_0033', 'Carleton College', 'N', '0.00', '0.00'),
+(34, 'i_0034', 'University of Notre Dame', 'N', '0.00', '0.00'),
+(35, 'i_0035', 'Boston College', 'N', '0.00', '0.00'),
+(36, 'i_0036', 'Pepperdine University', 'Y', '0.00', '0.00'),
+(37, 'i_0037', 'University of California, Davis', 'N', '0.00', '0.00'),
+(38, 'i_0038', 'Harvey Mudd College', 'N', '0.00', '0.00'),
+(39, 'i_0039', 'Dartmouth College', 'N', '0.00', '0.00'),
+(40, 'i_0040', 'Davidson College', 'Y', '0.00', '0.00'),
+(41, 'i_0041', 'New York University', 'N', '0.00', '0.00'),
+(42, 'i_0042', 'United States Naval Academy', 'Y', '0.00', '0.00'),
+(43, 'i_0043', 'University of Illinois, Urbana-Champaign', 'Y', '0.00', '0.00'),
+(44, 'i_0044', 'University of Georgia', 'Y', '0.00', '0.00'),
+(45, 'i_0045', 'Johns Hopkins University', 'N', '0.00', '0.00'),
+(46, 'i_0046', 'United States Coast Guard Academy', 'Y', '0.00', '0.00'),
+(47, 'i_0047', 'University of Wisconsin, Madison', 'N', '0.00', '0.00'),
+(48, 'i_0048', 'Georgetown University', 'N', '0.00', '0.00'),
+(49, 'i_0049', 'Smith College', 'Y', '0.00', '0.00'),
+(50, 'i_0050', 'College of William and Mary', 'N', '0.00', '0.00'),
+(51, 'i_0051', 'Scripps College', 'N', '0.00', '0.00'),
+(52, 'i_0052', 'Boston University', 'Y', '0.00', '0.00'),
+(53, 'i_0053', 'Barnard College', 'N', '0.00', '0.00'),
+(54, 'i_0054', 'Hamilton College', 'Y', '0.00', '0.00'),
+(55, 'i_0055', 'University of Florida', 'Y', '0.00', '0.00'),
+(56, 'i_0056', 'University of Texas, Austin', 'Y', '0.00', '0.00'),
+(57, 'i_0057', 'Villanova University', 'Y', '0.00', '0.00'),
+(58, 'i_0058', 'University of Virginia', 'N', '0.00', '0.00'),
+(59, 'i_0059', 'Oberlin College', 'Y', '0.00', '0.00'),
+(60, 'i_0060', 'University of Washington', 'N', '0.00', '0.00'),
+(61, 'i_0061', 'George Washington University', 'Y', '0.00', '0.00'),
+(62, 'i_0062', 'Wesleyan University', 'Y', '0.00', '0.00'),
+(63, 'i_0063', 'Columbia University', 'N', '0.00', '0.00'),
+(64, 'i_0064', 'Duke University', 'Y', '0.00', '0.00'),
+(65, 'i_0065', 'Georgia Institute of Technology', 'N', '0.00', '0.00'),
+(66, 'i_0066', 'Bryn Mawr College', 'Y', '0.00', '0.00'),
+(67, 'i_0067', 'Wellesley College', 'Y', '0.00', '0.00'),
+(68, 'i_0068', 'Virginia Military Institute', 'N', '0.00', '0.00'),
+(69, 'i_0069', 'Swarthmore College', 'N', '0.00', '0.00'),
+(70, 'i_0070', 'DePauw University', 'Y', '0.00', '0.00'),
+(71, 'i_0071', 'Cornell University', 'Y', '0.00', '0.00'),
+(72, 'i_0072', 'Reed College', 'Y', '0.00', '0.00'),
+(73, 'i_0073', 'University of Pennsylvania', 'N', '0.00', '0.00'),
+(74, 'i_0074', 'University of Richmond', 'N', '0.00', '0.00'),
+(75, 'i_0075', 'University of Southern California', 'N', '0.00', '0.00'),
+(76, 'i_0076', 'Washington and Lee University', 'Y', '0.00', '0.00'),
+(77, 'i_0077', 'Lehigh University', 'Y', '0.00', '0.00'),
+(78, 'i_0078', 'United States Air Force Academy', 'Y', '0.00', '0.00'),
+(79, 'i_0079', 'Colgate University', 'Y', '0.00', '0.00'),
+(80, 'i_0080', 'Bowdoin College', 'N', '0.00', '0.00'),
+(81, 'i_0081', 'Pomona College', 'Y', '0.00', '0.00'),
+(82, 'i_0082', 'Brown University', 'Y', '0.00', '0.00'),
+(83, 'i_0083', 'Vassar College', 'N', '0.00', '0.00'),
+(84, 'i_0084', 'Pennsylvania State University, University Park', 'Y', '0.00', '0.00'),
+(85, 'i_0085', 'Union College', 'Y', '0.00', '0.00'),
+(86, 'i_0086', 'University of California, Santa Barbara', 'N', '0.00', '0.00'),
+(87, 'i_0087', 'University of Rochester', 'Y', '0.00', '0.00'),
+(88, 'i_0088', 'United States Military Academy', 'Y', '0.00', '0.00'),
+(89, 'i_0089', 'Mount Holyoke College', 'Y', '0.00', '0.00'),
+(90, 'i_0090', 'University of North Carolina, Chapel Hill', 'Y', '0.00', '0.00'),
+(91, 'i_0091', 'Kenyon College', 'N', '0.00', '0.00'),
+(92, 'i_0092', 'Macalester College', 'N', '0.00', '0.00'),
+(93, 'i_0093', 'Massachusetts Institute of Technology', 'N', '0.00', '0.00'),
+(94, 'i_0094', 'Brandeis University', 'Y', '0.00', '0.00'),
+(95, 'i_0095', 'Wake Forest University', 'N', '0.00', '0.00'),
+(96, 'i_0096', 'Cooper Union', 'N', '0.00', '0.00'),
+(97, 'i_0097', 'Tufts University', 'N', '0.00', '0.00'),
+(98, 'i_0098', 'Colorado College', 'Y', '0.00', '0.00'),
+(99, 'i_0099', 'Santa Clara University', 'Y', '0.00', '0.00'),
+(100, 'i_0100', 'University of Chicago', 'N', '0.00', '0.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance`
+--
+
+CREATE TABLE `links_distance` (
+  `token_link_row_index` int(11) NOT NULL COMMENT 'Row counter for token link',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+--
+-- Dumping data for table `links_distance`
+--
+
+INSERT INTO `links_distance` (`token_link_row_index`, `source_id`, `target_id`, `link_distance`, `weight`, `link_source_type`) VALUES
+(1, 'token_0001', 'token_0002', 5, 3, 'qualifications'),
+(2, 'token_0001', 'token_0004', 4, 7, 'pds'),
+(3, 'token_0003', 'token_0008', 2, 6, 'pds'),
+(4, 'token_0002', 'token_0006', 3, 4, 'responsibilities'),
+(5, 'token_0006', 'token_0009', 6, 2, 'pds'),
+(6, 'token_0009', 'token_0010', 10, 1, 'qualifications'),
+(7, 'token_0007', 'token_00010', 7, 2, 'qualifications'),
+(8, 'token_0004', 'token_0005', 4, 4, 'responsibilities'),
+(9, 'token_0004', 'token_0009', 8, 1, 'pds'),
+(10, 'token_0008', 'token_0002', 3, 1, 'pds');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance_reduced`
+--
+
+CREATE TABLE `links_distance_reduced` (
+  `token_link_rd_row_index` int(11) NOT NULL COMMENT 'Row counter for token link (reduced)',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance_threshold` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+--
+-- Dumping data for table `links_distance_reduced`
+--
+
+INSERT INTO `links_distance_reduced` (`token_link_rd_row_index`, `source_id`, `target_id`, `link_distance_threshold`, `weight`, `link_source_type`) VALUES
+(1, 'token_0001', 'token_0002', 3, 2, 'qualifications'),
+(2, 'token_0001', 'token_0004', 3, 1, 'pds'),
+(3, 'token_0003', 'token_0008', 3, 1, 'pds'),
+(4, 'token_0002', 'token_0006', 3, 2, 'responsibilities'),
+(5, 'token_0006', 'token_0009', 3, 1, 'pds');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position_descriptions`
+--
+
+CREATE TABLE `position_descriptions` (
+  `pd_row_index` int(11) NOT NULL COMMENT 'Row index for position description',
+  `pd_id` varchar(15) DEFAULT NULL COMMENT 'Unique ID for position description',
+  `pd_dc` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Flag indicating whether PD is for a data curation track fellowship',
+  `pd_institution` varchar(300) NOT NULL COMMENT 'Host institution',
+  `pd_institution_description` varchar(6000) DEFAULT NULL COMMENT 'PD institution description',
+  `pd_startyear` year(4) NOT NULL COMMENT 'PD start year',
+  `pd_endyear` year(4) NOT NULL COMMENT 'PD end year',
+  `pd_title` varchar(300) NOT NULL COMMENT 'PD title',
+  `pd_description` varchar(8000) NOT NULL COMMENT 'PD description text',
+  `pd_responsibilities` varchar(5000) NOT NULL COMMENT 'PD position responsibilities',
+  `pd_qualifications_min` varchar(5000) NOT NULL COMMENT 'PD minimum qualifications',
+  `pd_qualifications_preferred` varchar(5000) DEFAULT NULL COMMENT 'PD preferred qualifications',
+  `pd_discipline` varchar(1000) NOT NULL COMMENT 'PD disciplinary focus',
+  `pd_addl_info` varchar(3000) DEFAULT NULL COMMENT 'PD additional information',
+  `pd_url` varchar(500) NOT NULL COMMENT 'PD URL'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about position descriptions';
+
+--
+-- Dumping data for table `position_descriptions`
+--
+
+INSERT INTO `position_descriptions` (`pd_row_index`, `pd_id`, `pd_dc`, `pd_institution`, `pd_institution_description`, `pd_startyear`, `pd_endyear`, `pd_title`, `pd_description`, `pd_responsibilities`, `pd_qualifications_min`, `pd_qualifications_preferred`, `pd_discipline`, `pd_addl_info`, `pd_url`) VALUES
+(1, 'pd_0001', 0, 'Maecenas tempor massa ac leo aliquet, et luctus ligula dictum.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 2012, 2014, 'Maecenas tempor massa ac leo aliquet, et luctus ligula dictum.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'Maecenas tempor massa ac leo aliquet, et luctus ligula dictum.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'Maecenas tempor massa ac leo aliquet, et luctus ligula dictum.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'Maecenas tempor massa ac leo aliquet, et luctus ligula dictum.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.'),
+(2, 'pd_0002', 0, 'Sed pulvinar orci in enim suscipit suscipit.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 2012, 2014, 'Sed pulvinar orci in enim suscipit suscipit.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'Sed pulvinar orci in enim suscipit suscipit.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'Sed pulvinar orci in enim suscipit suscipit.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'Sed pulvinar orci in enim suscipit suscipit.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.'),
+(3, 'pd_0003', 0, 'Donec finibus augue et posuere tincidunt.', 'Curabitur ultricies magna ut quam congue consectetur.', 2012, 2014, 'Donec finibus augue et posuere tincidunt.', 'Curabitur ultricies magna ut quam congue consectetur.', 'Donec finibus augue et posuere tincidunt.', 'Curabitur ultricies magna ut quam congue consectetur.', 'Donec finibus augue et posuere tincidunt.', 'Curabitur ultricies magna ut quam congue consectetur.', 'Donec finibus augue et posuere tincidunt.', 'Curabitur ultricies magna ut quam congue consectetur.'),
+(4, 'pd_0004', 0, 'Maecenas tempus nisl efficitur, mattis diam a, egestas purus.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 2012, 2014, 'Maecenas tempus nisl efficitur, mattis diam a, egestas purus.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'Maecenas tempus nisl efficitur, mattis diam a, egestas purus.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'Maecenas tempus nisl efficitur, mattis diam a, egestas purus.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'Maecenas tempus nisl efficitur, mattis diam a, egestas purus.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.'),
+(5, 'pd_0005', 0, 'Vestibulum vel ante sagittis magna pellentesque condimentum.', 'Nunc tristique tortor vitae condimentum placerat.', 2012, 2014, 'Vestibulum vel ante sagittis magna pellentesque condimentum.', 'Nunc tristique tortor vitae condimentum placerat.', 'Vestibulum vel ante sagittis magna pellentesque condimentum.', 'Nunc tristique tortor vitae condimentum placerat.', 'Vestibulum vel ante sagittis magna pellentesque condimentum.', 'Nunc tristique tortor vitae condimentum placerat.', 'Vestibulum vel ante sagittis magna pellentesque condimentum.', 'Nunc tristique tortor vitae condimentum placerat.'),
+(6, 'pd_0006', 1, 'Nam pharetra ex eget pellentesque semper.', 'Quisque suscipit nunc a augue varius elementum.', 2012, 2014, 'Nam pharetra ex eget pellentesque semper.', 'Quisque suscipit nunc a augue varius elementum.', 'Nam pharetra ex eget pellentesque semper.', 'Quisque suscipit nunc a augue varius elementum.', 'Nam pharetra ex eget pellentesque semper.', 'Quisque suscipit nunc a augue varius elementum.', 'Nam pharetra ex eget pellentesque semper.', 'Quisque suscipit nunc a augue varius elementum.'),
+(7, 'pd_0007', 1, 'Nullam at tellus ac lorem convallis vehicula.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 2012, 2014, 'Nullam at tellus ac lorem convallis vehicula.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'Nullam at tellus ac lorem convallis vehicula.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'Nullam at tellus ac lorem convallis vehicula.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'Nullam at tellus ac lorem convallis vehicula.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.'),
+(8, 'pd_0008', 1, 'Phasellus a augue ut nibh molestie fermentum in eget eros.', 'Sed vel lectus ut arcu aliquam fringilla.', 2012, 2014, 'Phasellus a augue ut nibh molestie fermentum in eget eros.', 'Sed vel lectus ut arcu aliquam fringilla.', 'Phasellus a augue ut nibh molestie fermentum in eget eros.', 'Sed vel lectus ut arcu aliquam fringilla.', 'Phasellus a augue ut nibh molestie fermentum in eget eros.', 'Sed vel lectus ut arcu aliquam fringilla.', 'Phasellus a augue ut nibh molestie fermentum in eget eros.', 'Sed vel lectus ut arcu aliquam fringilla.'),
+(9, 'pd_0009', 1, 'Vestibulum mattis dui ut urna mattis, in interdum dui bibendum.', 'Curabitur cursus elit in lobortis accumsan.', 2012, 2014, 'Vestibulum mattis dui ut urna mattis, in interdum dui bibendum.', 'Curabitur cursus elit in lobortis accumsan.', 'Vestibulum mattis dui ut urna mattis, in interdum dui bibendum.', 'Curabitur cursus elit in lobortis accumsan.', 'Vestibulum mattis dui ut urna mattis, in interdum dui bibendum.', 'Curabitur cursus elit in lobortis accumsan.', 'Vestibulum mattis dui ut urna mattis, in interdum dui bibendum.', 'Curabitur cursus elit in lobortis accumsan.'),
+(10, 'pd_0010', 1, 'Aliquam in augue eleifend, blandit nisi eget, feugiat neque.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 2012, 2014, 'Aliquam in augue eleifend, blandit nisi eget, feugiat neque.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'Aliquam in augue eleifend, blandit nisi eget, feugiat neque.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'Aliquam in augue eleifend, blandit nisi eget, feugiat neque.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'Aliquam in augue eleifend, blandit nisi eget, feugiat neque.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.'),
+(11, 'pd_0011', 1, 'Ut in elit lobortis turpis cursus tristique eu in velit.', 'Vivamus condimentum eros convallis est vehicula placerat.', 2012, 2014, 'Ut in elit lobortis turpis cursus tristique eu in velit.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'Ut in elit lobortis turpis cursus tristique eu in velit.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'Ut in elit lobortis turpis cursus tristique eu in velit.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'Ut in elit lobortis turpis cursus tristique eu in velit.', 'Vivamus condimentum eros convallis est vehicula placerat.'),
+(12, 'pd_0012', 1, 'Ut in enim eget risus mollis maximus vitae id dolor.', 'Ut id libero vel diam consequat mollis.', 2012, 2014, 'Ut in enim eget risus mollis maximus vitae id dolor.', 'Ut id libero vel diam consequat mollis.', 'Ut in enim eget risus mollis maximus vitae id dolor.', 'Ut id libero vel diam consequat mollis.', 'Ut in enim eget risus mollis maximus vitae id dolor.', 'Ut id libero vel diam consequat mollis.', 'Ut in enim eget risus mollis maximus vitae id dolor.', 'Ut id libero vel diam consequat mollis.'),
+(13, 'pd_0013', 1, 'Phasellus maximus sapien mattis sapien porta placerat.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.', 2012, 2014, 'Phasellus maximus sapien mattis sapien porta placerat.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.', 'Phasellus maximus sapien mattis sapien porta placerat.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.', 'Phasellus maximus sapien mattis sapien porta placerat.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.', 'Phasellus maximus sapien mattis sapien porta placerat.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.'),
+(14, 'pd_0014', 1, 'Cras rhoncus odio non enim eleifend, vel tempor ante feugiat.', 'Etiam vulputate ante consectetur ullamcorper molestie.', 2012, 2014, 'Cras rhoncus odio non enim eleifend, vel tempor ante feugiat.', 'Etiam vulputate ante consectetur ullamcorper molestie.', 'Cras rhoncus odio non enim eleifend, vel tempor ante feugiat.', 'Etiam vulputate ante consectetur ullamcorper molestie.', 'Cras rhoncus odio non enim eleifend, vel tempor ante feugiat.', 'Etiam vulputate ante consectetur ullamcorper molestie.', 'Cras rhoncus odio non enim eleifend, vel tempor ante feugiat.', 'Etiam vulputate ante consectetur ullamcorper molestie.'),
+(15, 'pd_0015', 1, 'Ut feugiat purus vel nisl vehicula feugiat.', 'Proin quis nisl id ante convallis hendrerit in in enim.', 2012, 2014, 'Ut feugiat purus vel nisl vehicula feugiat.', 'Proin quis nisl id ante convallis hendrerit in in enim.', 'Ut feugiat purus vel nisl vehicula feugiat.', 'Proin quis nisl id ante convallis hendrerit in in enim.', 'Ut feugiat purus vel nisl vehicula feugiat.', 'Proin quis nisl id ante convallis hendrerit in in enim.', 'Ut feugiat purus vel nisl vehicula feugiat.', 'Proin quis nisl id ante convallis hendrerit in in enim.'),
+(16, 'pd_0016', 1, 'Donec eget odio sit amet ligula maximus rhoncus ac quis ante.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.', 2012, 2014, 'Donec eget odio sit amet ligula maximus rhoncus ac quis ante.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.', 'Donec eget odio sit amet ligula maximus rhoncus ac quis ante.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.', 'Donec eget odio sit amet ligula maximus rhoncus ac quis ante.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.', 'Donec eget odio sit amet ligula maximus rhoncus ac quis ante.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.'),
+(17, 'pd_0017', 1, 'Cras posuere odio sed felis tristique, interdum egestas quam dictum.', 'Suspendisse iaculis risus in tincidunt dignissim.', 2012, 2014, 'Cras posuere odio sed felis tristique, interdum egestas quam dictum.', 'Suspendisse iaculis risus in tincidunt dignissim.', 'Cras posuere odio sed felis tristique, interdum egestas quam dictum.', 'Suspendisse iaculis risus in tincidunt dignissim.', 'Cras posuere odio sed felis tristique, interdum egestas quam dictum.', 'Suspendisse iaculis risus in tincidunt dignissim.', 'Cras posuere odio sed felis tristique, interdum egestas quam dictum.', 'Suspendisse iaculis risus in tincidunt dignissim.'),
+(18, 'pd_0018', 1, 'Sed pharetra nisi a pulvinar pretium.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.', 2012, 2014, 'Sed pharetra nisi a pulvinar pretium.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.', 'Sed pharetra nisi a pulvinar pretium.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.', 'Sed pharetra nisi a pulvinar pretium.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.', 'Sed pharetra nisi a pulvinar pretium.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.'),
+(19, 'pd_0019', 1, 'Ut at sapien gravida lacus consectetur scelerisque.', 'Vivamus sagittis neque id dolor egestas malesuada.', 2012, 2014, 'Ut at sapien gravida lacus consectetur scelerisque.', 'Vivamus sagittis neque id dolor egestas malesuada.', 'Ut at sapien gravida lacus consectetur scelerisque.', 'Vivamus sagittis neque id dolor egestas malesuada.', 'Ut at sapien gravida lacus consectetur scelerisque.', 'Vivamus sagittis neque id dolor egestas malesuada.', 'Ut at sapien gravida lacus consectetur scelerisque.', 'Vivamus sagittis neque id dolor egestas malesuada.'),
+(20, 'pd_0020', 1, 'Suspendisse vitae sem dignissim, porta velit id, dapibus enim.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.', 2012, 2014, 'Suspendisse vitae sem dignissim, porta velit id, dapibus enim.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.', 'Suspendisse vitae sem dignissim, porta velit id, dapibus enim.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.', 'Suspendisse vitae sem dignissim, porta velit id, dapibus enim.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.', 'Suspendisse vitae sem dignissim, porta velit id, dapibus enim.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.'),
+(21, 'pd_0021', 1, 'Sed blandit ipsum eget dui ullamcorper, nec auctor ex posuere.', 'Quisque et massa id elit efficitur dignissim.', 2012, 2014, 'Sed blandit ipsum eget dui ullamcorper, nec auctor ex posuere.', 'Quisque et massa id elit efficitur dignissim.', 'Sed blandit ipsum eget dui ullamcorper, nec auctor ex posuere.', 'Quisque et massa id elit efficitur dignissim.', 'Sed blandit ipsum eget dui ullamcorper, nec auctor ex posuere.', 'Quisque et massa id elit efficitur dignissim.', 'Sed blandit ipsum eget dui ullamcorper, nec auctor ex posuere.', 'Quisque et massa id elit efficitur dignissim.'),
+(22, 'pd_0022', 1, 'Phasellus vitae urna id mauris rutrum aliquam fermentum sed nibh.', 'Suspendisse consectetur ante non dui volutpat, efficitur mollis mauris eleifend.', 2012, 2014, 'Phasellus vitae urna id mauris rutrum aliquam fermentum sed nibh.', 'Suspendisse consectetur ante non dui volutpat, efficitur mollis mauris eleifend.', 'Phasellus vitae urna id mauris rutrum aliquam fermentum sed nibh.', 'Suspendisse consectetur ante non dui volutpat, efficitur mollis mauris eleifend.', 'Phasellus vitae urna id mauris rutrum aliquam fermentum sed nibh.', 'Suspendisse consectetur ante non dui volutpat, efficitur mollis mauris eleifend.', 'Phasellus vitae urna id mauris rutrum aliquam fermentum sed nibh.', 'Suspendisse consectetur ante non dui volutpat, efficitur mollis mauris eleifend.'),
+(23, 'pd_0023', 1, 'Ut in quam vitae tortor rutrum tempor eu nec lacus.', 'Sed cursus magna ac ipsum dapibus vulputate.', 2012, 2014, 'Ut in quam vitae tortor rutrum tempor eu nec lacus.', 'Sed cursus magna ac ipsum dapibus vulputate.', 'Ut in quam vitae tortor rutrum tempor eu nec lacus.', 'Sed cursus magna ac ipsum dapibus vulputate.', 'Ut in quam vitae tortor rutrum tempor eu nec lacus.', 'Sed cursus magna ac ipsum dapibus vulputate.', 'Ut in quam vitae tortor rutrum tempor eu nec lacus.', 'Sed cursus magna ac ipsum dapibus vulputate.'),
+(24, 'pd_0024', 1, 'Maecenas gravida quam vel est venenatis, et venenatis dolor mollis.', 'Phasellus in nunc vel neque sagittis ultrices ac non odio.', 2012, 2014, 'Maecenas gravida quam vel est venenatis, et venenatis dolor mollis.', 'Phasellus in nunc vel neque sagittis ultrices ac non odio.', 'Maecenas gravida quam vel est venenatis, et venenatis dolor mollis.', 'Phasellus in nunc vel neque sagittis ultrices ac non odio.', 'Maecenas gravida quam vel est venenatis, et venenatis dolor mollis.', 'Phasellus in nunc vel neque sagittis ultrices ac non odio.', 'Maecenas gravida quam vel est venenatis, et venenatis dolor mollis.', 'Phasellus in nunc vel neque sagittis ultrices ac non odio.'),
+(25, 'pd_0025', 1, 'Praesent suscipit ex nec diam luctus, nec mollis dui accumsan.', 'Vestibulum lacinia enim sagittis nulla porttitor consequat.', 2012, 2014, 'Praesent suscipit ex nec diam luctus, nec mollis dui accumsan.', 'Vestibulum lacinia enim sagittis nulla porttitor consequat.', 'Praesent suscipit ex nec diam luctus, nec mollis dui accumsan.', 'Vestibulum lacinia enim sagittis nulla porttitor consequat.', 'Praesent suscipit ex nec diam luctus, nec mollis dui accumsan.', 'Vestibulum lacinia enim sagittis nulla porttitor consequat.', 'Praesent suscipit ex nec diam luctus, nec mollis dui accumsan.', 'Vestibulum lacinia enim sagittis nulla porttitor consequat.'),
+(26, 'pd_0026', 1, 'In et dolor ullamcorper, semper enim a, cursus tortor.', 'Mauris vel magna fermentum, feugiat ante in, rutrum sem.', 2012, 2014, 'In et dolor ullamcorper, semper enim a, cursus tortor.', 'Mauris vel magna fermentum, feugiat ante in, rutrum sem.', 'In et dolor ullamcorper, semper enim a, cursus tortor.', 'Mauris vel magna fermentum, feugiat ante in, rutrum sem.', 'In et dolor ullamcorper, semper enim a, cursus tortor.', 'Mauris vel magna fermentum, feugiat ante in, rutrum sem.', 'In et dolor ullamcorper, semper enim a, cursus tortor.', 'Mauris vel magna fermentum, feugiat ante in, rutrum sem.'),
+(27, 'pd_0027', 1, 'Integer eu diam ut purus blandit tempor sed eget arcu.', 'Maecenas fermentum justo quis lacus sagittis consectetur.', 2012, 2014, 'Integer eu diam ut purus blandit tempor sed eget arcu.', 'Maecenas fermentum justo quis lacus sagittis consectetur.', 'Integer eu diam ut purus blandit tempor sed eget arcu.', 'Maecenas fermentum justo quis lacus sagittis consectetur.', 'Integer eu diam ut purus blandit tempor sed eget arcu.', 'Maecenas fermentum justo quis lacus sagittis consectetur.', 'Integer eu diam ut purus blandit tempor sed eget arcu.', 'Maecenas fermentum justo quis lacus sagittis consectetur.'),
+(28, 'pd_0028', 1, 'Curabitur interdum risus non ornare ultrices.', 'Cras non augue mollis, gravida risus placerat, dapibus ex.', 2012, 2014, 'Curabitur interdum risus non ornare ultrices.', 'Cras non augue mollis, gravida risus placerat, dapibus ex.', 'Curabitur interdum risus non ornare ultrices.', 'Cras non augue mollis, gravida risus placerat, dapibus ex.', 'Curabitur interdum risus non ornare ultrices.', 'Cras non augue mollis, gravida risus placerat, dapibus ex.', 'Curabitur interdum risus non ornare ultrices.', 'Cras non augue mollis, gravida risus placerat, dapibus ex.'),
+(29, 'pd_0029', 1, 'Vestibulum eleifend dolor at velit laoreet fringilla.', 'Donec pretium diam vitae nibh sollicitudin, in fringilla ex cursus.', 2012, 2014, 'Vestibulum eleifend dolor at velit laoreet fringilla.', 'Donec pretium diam vitae nibh sollicitudin, in fringilla ex cursus.', 'Vestibulum eleifend dolor at velit laoreet fringilla.', 'Donec pretium diam vitae nibh sollicitudin, in fringilla ex cursus.', 'Vestibulum eleifend dolor at velit laoreet fringilla.', 'Donec pretium diam vitae nibh sollicitudin, in fringilla ex cursus.', 'Vestibulum eleifend dolor at velit laoreet fringilla.', 'Donec pretium diam vitae nibh sollicitudin, in fringilla ex cursus.'),
+(30, 'pd_0030', 1, 'Proin fringilla velit vitae pretium malesuada.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 2012, 2014, 'Proin fringilla velit vitae pretium malesuada.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'Proin fringilla velit vitae pretium malesuada.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'Proin fringilla velit vitae pretium malesuada.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'Proin fringilla velit vitae pretium malesuada.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.'),
+(31, 'pd_0031', 1, 'Curabitur euismod odio nec metus mattis, in mattis metus porttitor.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 2012, 2014, 'Curabitur euismod odio nec metus mattis, in mattis metus porttitor.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'Curabitur euismod odio nec metus mattis, in mattis metus porttitor.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'Curabitur euismod odio nec metus mattis, in mattis metus porttitor.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'Curabitur euismod odio nec metus mattis, in mattis metus porttitor.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.'),
+(32, 'pd_0032', 1, 'Donec blandit leo ac risus fermentum, ac pulvinar nulla gravida.', 'Curabitur ultricies magna ut quam congue consectetur.', 2012, 2014, 'Donec blandit leo ac risus fermentum, ac pulvinar nulla gravida.', 'Curabitur ultricies magna ut quam congue consectetur.', 'Donec blandit leo ac risus fermentum, ac pulvinar nulla gravida.', 'Curabitur ultricies magna ut quam congue consectetur.', 'Donec blandit leo ac risus fermentum, ac pulvinar nulla gravida.', 'Curabitur ultricies magna ut quam congue consectetur.', 'Donec blandit leo ac risus fermentum, ac pulvinar nulla gravida.', 'Curabitur ultricies magna ut quam congue consectetur.'),
+(33, 'pd_0033', 1, 'Nulla accumsan felis at lorem tristique varius.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 2012, 2014, 'Nulla accumsan felis at lorem tristique varius.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'Nulla accumsan felis at lorem tristique varius.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'Nulla accumsan felis at lorem tristique varius.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'Nulla accumsan felis at lorem tristique varius.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.'),
+(34, 'pd_0034', 1, 'Mauris tempor purus sed magna pulvinar, non tincidunt ligula maximus.', 'Nunc tristique tortor vitae condimentum placerat.', 2012, 2014, 'Mauris tempor purus sed magna pulvinar, non tincidunt ligula maximus.', 'Nunc tristique tortor vitae condimentum placerat.', 'Mauris tempor purus sed magna pulvinar, non tincidunt ligula maximus.', 'Nunc tristique tortor vitae condimentum placerat.', 'Mauris tempor purus sed magna pulvinar, non tincidunt ligula maximus.', 'Nunc tristique tortor vitae condimentum placerat.', 'Mauris tempor purus sed magna pulvinar, non tincidunt ligula maximus.', 'Nunc tristique tortor vitae condimentum placerat.'),
+(35, 'pd_0035', 1, 'Etiam vel quam consequat, consectetur diam vel, interdum dolor.', 'Quisque suscipit nunc a augue varius elementum.', 2012, 2014, 'Etiam vel quam consequat, consectetur diam vel, interdum dolor.', 'Quisque suscipit nunc a augue varius elementum.', 'Etiam vel quam consequat, consectetur diam vel, interdum dolor.', 'Quisque suscipit nunc a augue varius elementum.', 'Etiam vel quam consequat, consectetur diam vel, interdum dolor.', 'Quisque suscipit nunc a augue varius elementum.', 'Etiam vel quam consequat, consectetur diam vel, interdum dolor.', 'Quisque suscipit nunc a augue varius elementum.'),
+(36, 'pd_0036', 1, 'Ut consequat ligula eget blandit eleifend.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 2012, 2014, 'Ut consequat ligula eget blandit eleifend.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'Ut consequat ligula eget blandit eleifend.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'Ut consequat ligula eget blandit eleifend.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'Ut consequat ligula eget blandit eleifend.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.'),
+(37, 'pd_0037', 1, 'Suspendisse consequat libero et cursus convallis.', 'Sed vel lectus ut arcu aliquam fringilla.', 2012, 2014, 'Suspendisse consequat libero et cursus convallis.', 'Sed vel lectus ut arcu aliquam fringilla.', 'Suspendisse consequat libero et cursus convallis.', 'Sed vel lectus ut arcu aliquam fringilla.', 'Suspendisse consequat libero et cursus convallis.', 'Sed vel lectus ut arcu aliquam fringilla.', 'Suspendisse consequat libero et cursus convallis.', 'Sed vel lectus ut arcu aliquam fringilla.'),
+(38, 'pd_0038', 1, 'Pellentesque at nunc quis lectus fermentum tincidunt vitae ut justo.', 'Curabitur cursus elit in lobortis accumsan.', 2012, 2014, 'Pellentesque at nunc quis lectus fermentum tincidunt vitae ut justo.', 'Curabitur cursus elit in lobortis accumsan.', 'Pellentesque at nunc quis lectus fermentum tincidunt vitae ut justo.', 'Curabitur cursus elit in lobortis accumsan.', 'Pellentesque at nunc quis lectus fermentum tincidunt vitae ut justo.', 'Curabitur cursus elit in lobortis accumsan.', 'Pellentesque at nunc quis lectus fermentum tincidunt vitae ut justo.', 'Curabitur cursus elit in lobortis accumsan.'),
+(39, 'pd_0039', 1, 'Vivamus dictum enim lobortis lacus volutpat, a gravida leo mattis.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 2012, 2014, 'Vivamus dictum enim lobortis lacus volutpat, a gravida leo mattis.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'Vivamus dictum enim lobortis lacus volutpat, a gravida leo mattis.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'Vivamus dictum enim lobortis lacus volutpat, a gravida leo mattis.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'Vivamus dictum enim lobortis lacus volutpat, a gravida leo mattis.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.'),
+(40, 'pd_0040', 1, 'Nulla eget quam ac sem efficitur hendrerit id vel erat.', 'Vivamus condimentum eros convallis est vehicula placerat.', 2012, 2014, 'Nulla eget quam ac sem efficitur hendrerit id vel erat.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'Nulla eget quam ac sem efficitur hendrerit id vel erat.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'Nulla eget quam ac sem efficitur hendrerit id vel erat.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'Nulla eget quam ac sem efficitur hendrerit id vel erat.', 'Vivamus condimentum eros convallis est vehicula placerat.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publications_projects`
+--
+
+CREATE TABLE `publications_projects` (
+  `pub_row_index` int(11) NOT NULL COMMENT 'Row counter for publication_project',
+  `pub_id` varchar(15) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Unique zero-padded ID for publication/project',
+  `pub_citation` varchar(500) CHARACTER SET latin1 NOT NULL COMMENT 'Full formatted citation',
+  `pub_title` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project title',
+  `pub_type` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project type',
+  `pub_link` varchar(750) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Publication/project link',
+  `pub_year` year(4) DEFAULT NULL COMMENT 'Year of publication',
+  `cohort_year` year(4) NOT NULL COMMENT 'Cohort year of publication',
+  `contributor_fids` varchar(250) CHARACTER SET latin1 DEFAULT NULL COMMENT 'comma-delimited list of fellow IDs of contributors',
+  `pub_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'A flag whether or not to display the record for the visualization'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `publications_projects`
+--
+
+INSERT INTO `publications_projects` (`pub_row_index`, `pub_id`, `pub_citation`, `pub_title`, `pub_type`, `pub_link`, `pub_year`, `cohort_year`, `contributor_fids`, `pub_display`) VALUES
+(1, ' pub_00001', 'Maecenas tempor massa ac leo aliquet, et luctus ligula dictum.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'publication', 'http://www', 2013, 2012, 'f_0001', 0),
+(2, ' pub_00002', 'Sed pulvinar orci in enim suscipit suscipit.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'publication', 'http://www', 2013, 2012, 'f_0001,f_0002,f_0003', 1),
+(3, ' pub_00003', 'Donec finibus augue et posuere tincidunt.', 'Curabitur ultricies magna ut quam congue consectetur.', 'presentation', 'http://www', 2013, 2012, 'f_0003', 0),
+(4, ' pub_00004', 'Maecenas tempus nisl efficitur, mattis diam a, egestas purus.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'publication', 'http://www', 2013, 2012, 'f_0018', 1),
+(5, ' pub_00005', 'Vestibulum vel ante sagittis magna pellentesque condimentum.', 'Nunc tristique tortor vitae condimentum placerat.', 'publication', 'http://www', 2013, 2012, 'f_000#,f_00##', 0),
+(6, ' pub_00006', 'Nam pharetra ex eget pellentesque semper.', 'Quisque suscipit nunc a augue varius elementum.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(7, ' pub_00007', 'Nullam at tellus ac lorem convallis vehicula.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'publication', 'http://www', 2013, 2012, 'f_000#', 0),
+(8, ' pub_00008', 'Phasellus a augue ut nibh molestie fermentum in eget eros.', 'Sed vel lectus ut arcu aliquam fringilla.', 'publication', 'http://www', 2013, 2012, 'f_000#', 0),
+(9, ' pub_00009', 'Vestibulum mattis dui ut urna mattis, in interdum dui bibendum.', 'Curabitur cursus elit in lobortis accumsan.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(10, ' pub_00010', 'Aliquam in augue eleifend, blandit nisi eget, feugiat neque.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(11, ' pub_00011', 'Ut in elit lobortis turpis cursus tristique eu in velit.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(12, ' pub_00012', 'Ut in enim eget risus mollis maximus vitae id dolor.', 'Ut id libero vel diam consequat mollis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(13, ' pub_00013', 'Phasellus maximus sapien mattis sapien porta placerat.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.', 'project', 'http://www', 2013, 2012, 'f_000#', 1),
+(14, ' pub_00014', 'Cras rhoncus odio non enim eleifend, vel tempor ante feugiat.', 'Etiam vulputate ante consectetur ullamcorper molestie.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(15, ' pub_00015', 'Ut feugiat purus vel nisl vehicula feugiat.', 'Proin quis nisl id ante convallis hendrerit in in enim.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(16, ' pub_00016', 'Donec eget odio sit amet ligula maximus rhoncus ac quis ante.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(17, ' pub_00017', 'Cras posuere odio sed felis tristique, interdum egestas quam dictum.', 'Suspendisse iaculis risus in tincidunt dignissim.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(18, ' pub_00018', 'Sed pharetra nisi a pulvinar pretium.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(19, ' pub_00019', 'Ut at sapien gravida lacus consectetur scelerisque.', 'Vivamus sagittis neque id dolor egestas malesuada.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(20, ' pub_00020', 'Suspendisse vitae sem dignissim, porta velit id, dapibus enim.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.', 'blog', 'http://www', 2013, 2012, 'f_000#', 1),
+(21, ' pub_00021', 'Sed blandit ipsum eget dui ullamcorper, nec auctor ex posuere.', 'Quisque et massa id elit efficitur dignissim.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(22, ' pub_00022', 'Phasellus vitae urna id mauris rutrum aliquam fermentum sed nibh.', 'Suspendisse consectetur ante non dui volutpat, efficitur mollis mauris eleifend.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(23, ' pub_00023', 'Ut in quam vitae tortor rutrum tempor eu nec lacus.', 'Sed cursus magna ac ipsum dapibus vulputate.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(24, ' pub_00024', 'Maecenas gravida quam vel est venenatis, et venenatis dolor mollis.', 'Phasellus in nunc vel neque sagittis ultrices ac non odio.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(25, ' pub_00025', 'Praesent suscipit ex nec diam luctus, nec mollis dui accumsan.', 'Vestibulum lacinia enim sagittis nulla porttitor consequat.', 'blog', 'http://www', 2013, 2012, 'f_000#', 1),
+(26, ' pub_00026', 'In et dolor ullamcorper, semper enim a, cursus tortor.', 'Mauris vel magna fermentum, feugiat ante in, rutrum sem.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(27, ' pub_00027', 'Integer eu diam ut purus blandit tempor sed eget arcu.', 'Maecenas fermentum justo quis lacus sagittis consectetur.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(28, ' pub_00028', 'Curabitur interdum risus non ornare ultrices.', 'Cras non augue mollis, gravida risus placerat, dapibus ex.', 'presentation', 'http://www', 2013, 2012, 'f_000#', 1),
+(29, ' pub_00029', 'Vestibulum eleifend dolor at velit laoreet fringilla.', 'Donec pretium diam vitae nibh sollicitudin, in fringilla ex cursus.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(30, ' pub_00030', 'Proin fringilla velit vitae pretium malesuada.', 'Integer at arcu auctor, malesuada lectus ut, porta orci.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(31, ' pub_00031', 'Curabitur euismod odio nec metus mattis, in mattis metus porttitor.', 'Nunc tempus ligula quis purus auctor, at scelerisque ex aliquet.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(32, ' pub_00032', 'Donec blandit leo ac risus fermentum, ac pulvinar nulla gravida.', 'Curabitur ultricies magna ut quam congue consectetur.', 'project', 'http://www', 2013, 2012, 'f_000#', 1),
+(33, ' pub_00033', 'Nulla accumsan felis at lorem tristique varius.', 'Duis vehicula nisi vitae nibh tincidunt, vulputate iaculis orci ullamcorper.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(34, ' pub_00034', 'Mauris tempor purus sed magna pulvinar, non tincidunt ligula maximus.', 'Nunc tristique tortor vitae condimentum placerat.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(35, ' pub_00035', 'Etiam vel quam consequat, consectetur diam vel, interdum dolor.', 'Quisque suscipit nunc a augue varius elementum.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(36, ' pub_00036', 'Ut consequat ligula eget blandit eleifend.', 'Proin ac tortor sed neque feugiat hendrerit ac consectetur urna.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(37, ' pub_00037', 'Suspendisse consequat libero et cursus convallis.', 'Sed vel lectus ut arcu aliquam fringilla.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(38, ' pub_00038', 'Pellentesque at nunc quis lectus fermentum tincidunt vitae ut justo.', 'Curabitur cursus elit in lobortis accumsan.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(39, ' pub_00039', 'Vivamus dictum enim lobortis lacus volutpat, a gravida leo mattis.', 'Proin a erat posuere, imperdiet dui ut, egestas mauris.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(40, ' pub_00040', 'Nulla eget quam ac sem efficitur hendrerit id vel erat.', 'Vivamus condimentum eros convallis est vehicula placerat.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(41, ' pub_00041', 'Integer efficitur tellus eu lacus aliquet, nec imperdiet ipsum iaculis.', 'Ut id libero vel diam consequat mollis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(42, ' pub_00042', 'Pellentesque vel neque fringilla, maximus quam sed, aliquet tortor.', 'Nam vel lacus egestas, accumsan lacus at, porttitor nisl.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(43, ' pub_00043', 'Aliquam in mauris rhoncus neque maximus elementum.', 'Etiam vulputate ante consectetur ullamcorper molestie.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(44, ' pub_00044', 'Praesent et ex a elit luctus mollis ac in mauris.', 'Proin quis nisl id ante convallis hendrerit in in enim.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(45, ' pub_00045', 'Nullam sit amet ex vulputate, cursus nunc nec, consequat arcu.', 'Aliquam a nulla suscipit, scelerisque odio nec, dapibus turpis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(46, ' pub_00046', 'Nulla imperdiet orci a est congue tincidunt.', 'Suspendisse iaculis risus in tincidunt dignissim.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(47, ' pub_00047', 'Morbi rutrum tortor sed est viverra lacinia.', 'Morbi venenatis turpis a diam volutpat, in elementum mauris euismod.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(48, ' pub_00048', 'Nunc id turpis nec eros scelerisque tincidunt eget non risus.', 'Vivamus sagittis neque id dolor egestas malesuada.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(49, ' pub_00049', 'Etiam non enim sed sapien posuere convallis.', 'Quisque aliquam dolor at dolor sollicitudin, sed pretium diam semper.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(50, ' pub_00050', 'Duis in tortor id nibh pretium interdum.', 'Donec sodales purus dapibus, aliquam urna ac, aliquam quam.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(51, ' pub_00051', 'Duis accumsan velit vitae placerat facilisis.', 'Curabitur sit amet metus vel magna pellentesque sagittis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(52, ' pub_00052', 'Praesent sed tortor quis diam sagittis ultricies.', 'Proin pretium justo a tortor rhoncus, a interdum tortor aliquet.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(53, ' pub_00053', 'Duis sed velit sed diam mollis egestas vel eget erat.', 'Nunc egestas risus tincidunt diam ultrices, vitae ullamcorper sem molestie.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(54, ' pub_00054', 'Nulla luctus nisi in pharetra pharetra.', 'Cras dapibus leo at neque sodales, vitae auctor ligula scelerisque.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(55, ' pub_00055', 'Nam vitae ligula non est convallis rhoncus.', 'Phasellus tristique augue sed tortor molestie auctor.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(56, ' pub_00056', 'Curabitur malesuada eros sed quam varius, quis molestie ex consectetur.', 'Vivamus at ipsum eu metus tempus pellentesque.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(57, ' pub_00057', 'Etiam ut sapien elementum, auctor nisl a, facilisis nisi.', 'Aliquam maximus sapien vitae augue laoreet, in scelerisque dolor pharetra.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(58, ' pub_00058', 'Nunc viverra urna viverra scelerisque vestibulum.', 'Vivamus quis ligula ut diam feugiat mattis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(59, ' pub_00059', 'Donec tempor nisi vel suscipit aliquam.', 'Proin congue nisl auctor purus hendrerit aliquam.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(60, ' pub_00060', 'In sit amet tellus eget ex ullamcorper accumsan in congue purus.', 'Curabitur euismod urna at mattis posuere.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(61, ' pub_00061', 'Mauris venenatis ante nec felis eleifend, eu suscipit sem scelerisque.', 'Cras pharetra mi sit amet facilisis varius.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(62, ' pub_00062', 'Morbi a neque ac ante dictum vehicula.', 'Maecenas dictum nisl ut nunc vulputate pulvinar.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(63, ' pub_00063', 'Mauris eu diam mattis elit ullamcorper semper.', 'Pellentesque porttitor sapien rutrum tortor consectetur, mattis posuere felis semper.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(64, ' pub_00064', 'Nullam non tortor eget eros iaculis rhoncus.', 'Aliquam in tellus sit amet odio hendrerit feugiat eu vel nisi.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(65, ' pub_00065', 'Vestibulum quis ex at ligula efficitur vehicula.', 'In dignissim lacus vel euismod lacinia.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(66, ' pub_00066', 'Ut eu dui fermentum, consectetur justo vel, iaculis erat.', 'Maecenas ut dolor aliquet, tempus arcu eget, egestas dui.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(67, ' pub_00067', 'Duis ornare elit nec consectetur laoreet.', 'Pellentesque egestas enim lacinia, porta quam lacinia, pretium turpis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(68, ' pub_00068', 'Vestibulum quis erat eget dolor venenatis pretium semper sit amet est.', 'Maecenas laoreet mauris lobortis elit facilisis ultrices.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(69, ' pub_00069', 'Pellentesque gravida ex vitae libero molestie, sed ullamcorper mi luctus.', 'Aliquam accumsan odio at justo porttitor, vitae malesuada lorem iaculis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(70, ' pub_00070', 'Curabitur euismod elit id lectus volutpat, quis elementum sapien bibendum.', 'Praesent id urna lacinia, eleifend massa et, consequat ex.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(71, ' pub_00072', 'In efficitur nulla nec suscipit dapibus.', 'Donec at quam et nunc suscipit imperdiet vel molestie orci.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(72, ' pub_00073', 'Mauris laoreet erat quis mollis porta.', 'Nunc non libero tincidunt, finibus nisl a, tempor odio.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(73, ' pub_00075', 'Ut non neque volutpat, bibendum nibh a, convallis augue.', 'Donec in mauris vel lectus porttitor auctor.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(74, ' pub_00076', 'Quisque molestie tortor nec nunc pulvinar aliquet.', 'Integer mollis metus et bibendum accumsan.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(75, ' pub_00077', 'Vestibulum rutrum risus at arcu lobortis pulvinar.', 'Etiam vitae turpis quis tortor semper sodales ut vel mauris.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(76, ' pub_00078', 'Donec at elit vel diam varius tincidunt.', 'Ut vel felis sollicitudin, imperdiet tellus a, consequat velit.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(77, ' pub_00079', 'Pellentesque pretium orci sit amet mi finibus pharetra.', 'Fusce sit amet nibh id enim convallis sodales in in nulla.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(78, ' pub_00080', 'In malesuada leo sit amet est ornare condimentum in at dui.', 'Integer gravida massa tristique erat mollis hendrerit non ac turpis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(79, ' pub_00081', 'Nam et ex non nisl lacinia accumsan id eu justo.', 'Cras vitae felis et quam rutrum facilisis.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(80, ' pub_00082', 'Praesent rhoncus felis a sem bibendum, eu ultrices quam luctus.', 'Aliquam placerat arcu sit amet interdum bibendum.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(81, ' pub_00083', 'Aenean ac est vitae lacus rhoncus posuere.', 'Donec faucibus arcu id nisi dictum fringilla.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(82, ' pub_00084', 'Aliquam ut enim tempus, tincidunt felis vel, molestie odio.', 'Vestibulum ac nisl iaculis, laoreet ligula id, dapibus quam.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(83, ' pub_00085', 'Vestibulum sodales tortor non arcu blandit vestibulum.', 'Proin rutrum magna sit amet diam vulputate ullamcorper.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(84, ' pub_00086', 'Cras finibus justo ut lorem tincidunt, ac consequat est faucibus.', 'Integer quis sapien vel sem pulvinar semper eget eget est.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(85, ' pub_00087', 'Aenean sollicitudin velit in lobortis consequat.', 'Proin hendrerit urna lobortis consequat ullamcorper.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(86, ' pub_00090', 'Donec pulvinar diam sed arcu maximus dignissim.', 'Donec et urna id magna scelerisque interdum vel vel ante.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(87, ' pub_00091', 'Vestibulum vel ex luctus, porttitor ex nec, commodo sapien.', 'Nulla cursus urna non nisi tristique, id maximus massa fringilla.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(88, ' pub_00092', 'Pellentesque consequat purus ac eros pretium ultrices.', 'Suspendisse nec mauris eget ipsum sodales porta.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(89, ' pub_00093', 'Sed ut nibh et eros efficitur bibendum non eu odio.', 'Suspendisse placerat libero sit amet viverra eleifend.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(90, ' pub_00094', 'Praesent blandit arcu a aliquam pellentesque.', 'Etiam iaculis diam eu mauris interdum pellentesque eget quis odio.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(91, ' pub_00095', 'Donec vel nunc sit amet massa auctor sagittis.', 'Praesent id mauris at ex pretium fermentum.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(92, ' pub_00096', 'Nam vel velit vel tellus hendrerit ultrices eu vitae magna.', 'Nullam egestas tortor euismod facilisis laoreet.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(93, ' pub_00097', 'Etiam bibendum nisi quis eros ullamcorper, eget lacinia justo egestas.', 'Praesent sit amet erat scelerisque orci posuere posuere.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(94, ' pub_00098', 'Aenean pulvinar mi vel quam laoreet, in volutpat nisl tempus.', 'Ut eu nibh a leo imperdiet commodo.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(95, ' pub_00099', 'Proin eget risus luctus, mollis dolor placerat, sagittis felis.', 'Morbi ornare lorem ac interdum aliquet.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(96, ' pub_00100', 'In consequat quam non purus elementum porta.', 'Mauris dapibus erat id eros consequat sodales.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(97, ' pub_00101', 'Quisque condimentum lectus a auctor efficitur.', 'Cras eu dui eget mauris facilisis luctus.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(98, ' pub_00102', 'Duis sed nisl quis tortor ultricies semper in commodo massa.', 'Ut et lectus tempor, gravida urna id, imperdiet odio.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1),
+(99, ' pub_00104', 'Curabitur iaculis nisl ut turpis placerat, rutrum consequat nunc faucibus.', 'Donec vestibulum nulla in nunc congue, sed ultricies risus luctus.', 'publication', 'http://www', 2013, 2012, 'f_000#', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `token_row_index` int(11) NOT NULL COMMENT 'Row index of token',
+  `token_id` varchar(15) DEFAULT NULL COMMENT 'Token alphanumeric ID',
+  `token_label` varchar(250) NOT NULL COMMENT 'The token',
+  `token_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Flag indicating whether token should be displayed in visualization and used in analyses',
+  `token_length` int(11) NOT NULL COMMENT 'Length of the token',
+  `token_stop_words_ct` int(11) DEFAULT NULL COMMENT 'Number of stop words in token',
+  `token_instance_ct` int(11) DEFAULT NULL COMMENT 'Number of token instances in source',
+  `token_entity_ct` int(11) DEFAULT NULL COMMENT 'Number of source entities of token',
+  `token_coverage_pct` float DEFAULT NULL COMMENT 'Percent coverage of token',
+  `token_source_type` varchar(25) NOT NULL COMMENT 'Source type, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token node data';
+
+--
+-- Dumping data for table `tokens`
+--
+
+INSERT INTO `tokens` (`token_row_index`, `token_id`, `token_label`, `token_display`, `token_length`, `token_stop_words_ct`, `token_instance_ct`, `token_entity_ct`, `token_coverage_pct`, `token_source_type`) VALUES
+(1, 'token_0001', 'data', 1, 1, 0, 50, 40, 1, 'pds'),
+(2, 'token_0002', 'research', 1, 1, 0, 38, 36, 0.9, 'responsibilities'),
+(3, 'token_0003', 'science', 1, 1, 0, 20, 25, 0.63, 'pds'),
+(4, 'token_0004', 'communication', 1, 1, 0, 26, 22, 0.55, 'pds'),
+(5, 'token_0005', 'curation', 1, 1, 0, 21, 35, 0.88, 'pds'),
+(6, 'token_0006', 'data management', 1, 2, 0, 12, 24, 0.6, 'qualifications'),
+(7, 'token_0007', 'research data', 0, 2, 0, 7, 20, 0.5, 'qualifications'),
+(8, 'token_0008', 'experience with', 0, 2, 1, 8, 31, 0.78, 'qualifications'),
+(9, 'token_0009', 'workshops', 1, 1, 0, 5, 12, 0.3, 'pds'),
+(10, 'token_0010', 'programming', 0, 1, 0, 4, 15, 0.38, 'responsibilities');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens_reduced`
+--
+
+CREATE TABLE `tokens_reduced` (
+  `token_id` varchar(15) NOT NULL COMMENT 'Unique ID of the token (from ''tokens'')',
+  `token_label` varchar(250) NOT NULL COMMENT 'The token',
+  `token_length` int(11) NOT NULL COMMENT 'Length of the token',
+  `token_instance_ct` int(11) DEFAULT NULL COMMENT 'Number of token instances in source',
+  `token_coverage_pct` float DEFAULT NULL COMMENT 'Percent coverage of token',
+  `token_source_type` varchar(25) NOT NULL COMMENT 'Source type, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token node data';
+
+--
+-- Dumping data for table `tokens_reduced`
+--
+
+INSERT INTO `tokens_reduced` (`token_id`, `token_label`, `token_length`, `token_instance_ct`, `token_coverage_pct`, `token_source_type`) VALUES
+('token_0001', 'data', 1, 50, 1, 'pds'),
+('token_0004', 'communication', 1, 26, 0.55, 'pds'),
+('token_0005', 'curation', 1, 21, 0.88, 'pds'),
+('token_0007', 'research data', 2, 7, 0.5, 'qualifications'),
+('token_0008', 'experience with', 2, 8, 0.78, 'qualifications'),
+('token_0010', 'programming', 1, 4, 0.38, 'responsibilities');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_counts_over_time`
+--
+
+CREATE TABLE `token_counts_over_time` (
+  `token_count_row_index` int(11) NOT NULL COMMENT 'Row counter for token count data',
+  `token_id` varchar(15) NOT NULL COMMENT 'Unique ID for the token',
+  `count_2012` int(11) NOT NULL,
+  `count_2013` int(11) NOT NULL,
+  `count_2014` int(11) NOT NULL,
+  `count_2015` int(11) NOT NULL,
+  `pct_2012` float NOT NULL COMMENT 'Percent coverage 2012',
+  `pct_2013` float NOT NULL COMMENT 'Percent coverage 2013',
+  `pct_2014` float NOT NULL COMMENT 'Percent coverage 2014',
+  `pct_2015` float NOT NULL COMMENT 'Percent coverage 2015'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token counts over time';
+
+--
+-- Dumping data for table `token_counts_over_time`
+--
+
+INSERT INTO `token_counts_over_time` (`token_count_row_index`, `token_id`, `count_2012`, `count_2013`, `count_2014`, `count_2015`, `pct_2012`, `pct_2013`, `pct_2014`, `pct_2015`) VALUES
+(1, 'token_0001', 5, 10, 10, 25, 0.05, 0.3, 0.9, 1),
+(2, 'token_0002', 6, 10, 8, 14, 0.08, 0.25, 0.57, 0.9),
+(3, 'token_0003', 5, 4, 3, 8, 0.09, 0.26, 0.75, 0.9),
+(4, 'token_0004', 4, 3, 8, 11, 0.1, 0.4, 0.7, 0.8),
+(5, 'token_0005', 0, 3, 3, 15, 0.05, 0.3, 0.8, 0.9),
+(6, 'token_0006', 1, 2, 3, 6, 0.03, 0.3, 0.6, 0.7),
+(7, 'token_0007', 1, 1, 2, 3, 0.02, 0.14, 0.55, 0.6),
+(8, 'token_0008', 1, 1, 2, 4, 0.06, 0.3, 0.7, 0.8),
+(9, 'token_0009', 0, 0, 1, 4, 0.11, 0.32, 0.5, 0.6),
+(10, 'token_0010', 0, 0, 1, 3, 0.1, 0.2, 0.3, 0.4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_instances`
+--
+
+CREATE TABLE `token_instances` (
+  `token_instance_row_index` int(11) NOT NULL COMMENT 'Row counter for token instance',
+  `token_id` varchar(15) NOT NULL COMMENT 'ID of the token',
+  `token_pretext` varchar(500) DEFAULT NULL COMMENT 'Pre-text for the token instance',
+  `token_posttext` varchar(500) DEFAULT NULL COMMENT 'Post-text for the token instance',
+  `entity_id` varchar(15) NOT NULL COMMENT 'ID of the entity of the instance (position description)',
+  `entity_type` varchar(25) NOT NULL COMMENT 'Instance source type, "bio" or "pd"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token instances and their contexts';
+
+--
+-- Dumping data for table `token_instances`
+--
+
+INSERT INTO `token_instances` (`token_instance_row_index`, `token_id`, `token_pretext`, `token_posttext`, `entity_id`, `entity_type`) VALUES
+(1, 'token_0001', 'must have experience working with', 'and relevant methodologies', 'pd_0001', 'qualifications'),
+(2, 'token_0001', 'knowledge of basic', 'analysis techniques', 'pd_0002', 'qualifications'),
+(3, 'token_0001', 'develop workshops around', 'cleaning and structuring', 'pd_0003', 'pds'),
+(4, 'token_0004', 'fellows must have excellent', 'skills when working with researchers', 'pd_0004', 'responsibilities'),
+(5, 'token_0005', 'develop best practices for data', 'workflows and services', 'pd_0005', 'responsibilities'),
+(6, 'token_0008', 'fellow must have', 'data analysis software', 'pd_0006', 'qualifications'),
+(7, 'token_0010', 'fellows have knowledge of several', 'languages, such as Python', 'pd_0007', 'pds');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fellows_data`
+--
+ALTER TABLE `fellows_data`
+  ADD PRIMARY KEY (`fellow_row_index`);
+
+--
+-- Indexes for table `institution_data`
+--
+ALTER TABLE `institution_data`
+  ADD PRIMARY KEY (`i_row_index`),
+  ADD UNIQUE KEY `i_name` (`i_name`);
+
+--
+-- Indexes for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  ADD PRIMARY KEY (`token_link_row_index`);
+
+--
+-- Indexes for table `links_distance_reduced`
+--
+ALTER TABLE `links_distance_reduced`
+  ADD PRIMARY KEY (`token_link_rd_row_index`);
+
+--
+-- Indexes for table `position_descriptions`
+--
+ALTER TABLE `position_descriptions`
+  ADD PRIMARY KEY (`pd_row_index`);
+
+--
+-- Indexes for table `publications_projects`
+--
+ALTER TABLE `publications_projects`
+  ADD PRIMARY KEY (`pub_row_index`);
+
+--
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`token_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_row_index`);
+
+--
+-- Indexes for table `tokens_reduced`
+--
+ALTER TABLE `tokens_reduced`
+  ADD PRIMARY KEY (`token_id`),
+  ADD UNIQUE KEY `token_id` (`token_id`);
+
+--
+-- Indexes for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  ADD PRIMARY KEY (`token_count_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_id`);
+
+--
+-- Indexes for table `token_instances`
+--
+ALTER TABLE `token_instances`
+  ADD PRIMARY KEY (`token_instance_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fellows_data`
+--
+ALTER TABLE `fellows_data`
+  MODIFY `fellow_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for fellow', AUTO_INCREMENT=131;
+--
+-- AUTO_INCREMENT for table `institution_data`
+--
+ALTER TABLE `institution_data`
+  MODIFY `i_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for institution', AUTO_INCREMENT=101;
+--
+-- AUTO_INCREMENT for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  MODIFY `token_link_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link', AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `links_distance_reduced`
+--
+ALTER TABLE `links_distance_reduced`
+  MODIFY `token_link_rd_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link (reduced)', AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `position_descriptions`
+--
+ALTER TABLE `position_descriptions`
+  MODIFY `pd_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row index for position description', AUTO_INCREMENT=41;
+--
+-- AUTO_INCREMENT for table `publications_projects`
+--
+ALTER TABLE `publications_projects`
+  MODIFY `pub_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for publication_project', AUTO_INCREMENT=100;
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `token_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row index of token', AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  MODIFY `token_count_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token count data', AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `token_instances`
+--
+ALTER TABLE `token_instances`
+  MODIFY `token_instance_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token instance', AUTO_INCREMENT=8;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

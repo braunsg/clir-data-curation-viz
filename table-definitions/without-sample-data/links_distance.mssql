@@ -1,0 +1,81 @@
+/*////////////////////////////////////////////////////////////////////////////////////////
+
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+////////////////////////////////////////////////////////////////////////////////////////*/
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2015 at 03:54 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links_distance`
+--
+
+CREATE TABLE `links_distance` (
+  `token_link_row_index` int(11) NOT NULL COMMENT 'Row counter for token link',
+  `source_id` varchar(15) NOT NULL COMMENT 'Source token ID',
+  `target_id` varchar(15) NOT NULL COMMENT 'Target token ID',
+  `link_distance` int(11) DEFAULT NULL COMMENT 'Distance between tokens',
+  `weight` int(11) NOT NULL COMMENT 'Link weight',
+  `link_source_type` varchar(25) NOT NULL COMMENT 'Source type of link, "bios" or "pds"'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds token link data';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  ADD PRIMARY KEY (`token_link_row_index`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `links_distance`
+--
+ALTER TABLE `links_distance`
+  MODIFY `token_link_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token link';
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

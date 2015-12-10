@@ -1,0 +1,86 @@
+/*////////////////////////////////////////////////////////////////////////////////////////
+
+clir-data-curation-viz
+https://github.com/braunsg/clir-data-curation-viz
+
+Open source code for the CLIR postdoctoral fellowship program in data curation visualization project, 
+released as a general framework for creating guided interactive visualizations that can be 
+presented over the web
+
+COPYRIGHT (C) 2015 Steven Braun
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+A full copy of the license is included in LICENSE.md.
+
+////////////////////////////////////////////////////////////////////////////////////////*/
+
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 02, 2015 at 03:55 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.5.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `clir`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `token_counts_over_time`
+--
+
+CREATE TABLE `token_counts_over_time` (
+  `token_count_row_index` int(11) NOT NULL COMMENT 'Row counter for token count data',
+  `token_id` varchar(15) NOT NULL COMMENT 'Unique ID for the token',
+  `count_2012` int(11) NOT NULL,
+  `count_2013` int(11) NOT NULL,
+  `count_2014` int(11) NOT NULL,
+  `count_2015` int(11) NOT NULL,
+  `pct_2012` float NOT NULL COMMENT 'Percent coverage 2012',
+  `pct_2013` float NOT NULL COMMENT 'Percent coverage 2013',
+  `pct_2014` float NOT NULL COMMENT 'Percent coverage 2014',
+  `pct_2015` float NOT NULL COMMENT 'Percent coverage 2015'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Holds data about token counts over time';
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  ADD PRIMARY KEY (`token_count_row_index`),
+  ADD UNIQUE KEY `token_id` (`token_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `token_counts_over_time`
+--
+ALTER TABLE `token_counts_over_time`
+  MODIFY `token_count_row_index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Row counter for token count data';
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
