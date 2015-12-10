@@ -6,6 +6,7 @@ This repository provides the code for the CLIR data curation fellows visualizati
 ABOUT THE FILES
 
 This package contains several directories, described in brief below:
+	
 	interface
 		A directory holding all files related to the visualization web interface
 		
