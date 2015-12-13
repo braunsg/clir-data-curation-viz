@@ -1,4 +1,4 @@
-<!--
+/*
 
 clir-data-curation-viz
 https://github.com/braunsg/clir-data-curation-viz
@@ -29,7 +29,7 @@ Steven Braun
 
 This file specifies site-wide style parameters. Some redundancies may be present.
 
- -->
+*/
 
 
 html {
