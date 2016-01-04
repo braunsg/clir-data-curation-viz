@@ -112,9 +112,15 @@ foreach($fellows_data as $i => $fellow) {
 		}
 	
 		$fellows_data[$i]["host_i_name"] = $host_name;
+		
+		/* EDIT 2016-01-04
+		Moved mysqli_free_result inside loop from original position outside loop;
+		was giving error saying could not retrieve mysqli_result outside loop */
+		
+		mysqli_free_result($result);
+
 	}
-	mysqli_free_result($result);
-	
+
 }
 
 // Now get collaborative links between fellows
